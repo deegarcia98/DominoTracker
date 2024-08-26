@@ -40,8 +40,8 @@ button.addrow {
     text-align: center;
 }
 
-div#roundscorebtn {
+#roundscorebtn {
     background-color: blueviolet;
     size: 500px;
-    margin-right: auto;
+    float: right;
 }
