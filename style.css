@@ -24,6 +24,24 @@ body {
 }
 
 table, tr, th {
-    border: 1.5px solid black;
+    border-bottom: 1.5px solid black;
     
+}
+
+/* input {
+    text-align: center;
+} */
+
+button.addrow {
+    text-align: right;
+}
+
+#roundscore {
+    text-align: center;
+}
+
+div#roundscorebtn {
+    background-color: blueviolet;
+    size: 500px;
+    margin-right: auto;
 }
