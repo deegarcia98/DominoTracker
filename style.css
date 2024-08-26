@@ -20,7 +20,7 @@ h2 {
 }
 
 body {
-    background-color: grey;
+    background-color: rgb(255, 255, 255);
 }
 
 table, tr, th {
@@ -36,12 +36,7 @@ button.addrow {
     text-align: right;
 }
 
-#roundscore {
+#roundscore, .team-score{
     text-align: center;
 }
 
-#roundscorebtn {
-    background-color: blueviolet;
-    size: 500px;
-    float: right;
-}
