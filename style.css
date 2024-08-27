@@ -40,3 +40,9 @@ button.addrow {
     text-align: center;
 }
 
+#rulesofgame {
+    display: block;
+    margin: auto;
+    position: relative;
+    margin-top: 30%;
+}
