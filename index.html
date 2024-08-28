@@ -32,11 +32,13 @@
     <!-- Looking to turn this into a button that when pressed pops up the 
      rules instead of being a paragraph at the bottom of the page -->
      
-    <button id="rulesofgame">Rules of the Game</button>
+    <button data-modal-target="modal" id="rulesofgame">Rules of the Game</button>
+
+    <button data-modal-target="modal">Rules of the Game</button>
     <div class="modal" id="modal">
       <div class="modal-header">
         <div class="title">Rules of the Game</div>
-      <button class="close-button">&times;</button>
+      <button data-close-button class="close-button">&times;</button>
     </div>
     <div class="modal-body">
       Once the winning team is determined (by placing last domino or lowest score), 
