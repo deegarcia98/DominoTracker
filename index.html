@@ -31,24 +31,28 @@
 
     
      
-    <button data-modal-target="modal" id="rulesofgame">Rules of the Game</button>
+    <button  class="button rulesofgamebtn">Rules of the Game</button>
 
-    <!-- https://www.youtube.com/watch?v=MBaw_6cPmAw Link for Code Below-->
+    <dialog class="modal" id="modal">
+      <h2>Rules of the Game</h2>
+      <p>Once the winning team is determined (by placing last domino or lowest score), 
+        the losing team (and only the losing team) counts the value of their remaining fichas. 
+        This total is awarded to the winning team's score. 
+        The first team to reach 150 points wins the game.</p>
+        <button class="button close-button">Close</button>
+    </dialog>
 
-    <button data-modal-target="modal">Rules of the Game</button>
-    <div class="modal" id="modal">
-      <div class="modal-header">
-        <div class="title">Rules of the Game</div>
-      <button data-close-button class="close-button">&times;</button>
-    </div>
-    <div class="modal-body">
-      Once the winning team is determined (by placing last domino or lowest score), 
-      the losing team (and only the losing team) counts the value of their remaining fichas. 
-      This total is awarded to the winning team's score. 
-      The first team to reach 150 points wins the game.
-    </div>
-  </div>
-  <div id="overlay"></div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     
 

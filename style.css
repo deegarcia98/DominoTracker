@@ -40,9 +40,26 @@ button.addrow {
     text-align: center;
 }
 
-#rulesofgame {
+.rulesofgamebtn {
     display: block;
     margin: auto;
     position: relative;
     margin-top: 10%;
+}
+
+#modal {
+    max-width: 50%;
+    border: 0; /* removes black border from default modal styling */
+    box-shadow: 0 0 1em rgb(0 0 0 / .6); /* puts a small shadow around the modal box */
+    text-align: center;
+    
+}
+
+#modal::backdrop {
+    background: grey;
+    opacity: .5;
+}
+
+.close-button {
+    margin: auto;
 }
