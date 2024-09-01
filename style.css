@@ -64,16 +64,22 @@ button.addrow {
     margin: auto;
 }
 
-#userinput1 {
+#team1input {
+    height: 21px;
+    padding-bottom: 4px;
+    width: auto
+}
+
+#team2input {
     height: 21px;
     padding-bottom: 4px;
     width: auto
 }
 
 #team1name {
-    margin-bottom: 1em;
-}
+    margin-bottom: 1em; /* makes space under the input field */
+} 
 
 #team2name {
-    margin-bottom: 1em;
-}
+    margin-bottom: 1em; /* makes space under the input field */
+};
