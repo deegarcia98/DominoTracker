@@ -87,3 +87,8 @@ button.addrow {
 #team2input {
     margin-bottom: 1em; /* makes space under the input field */
 };
+
+#team1name {
+    background-color: black;
+    height: 5px;
+}
