@@ -65,21 +65,25 @@ button.addrow {
 }
 
 #team1input {
-    height: 21px;
+    
     padding-bottom: 4px;
     width: auto
 }
 
 #team2input {
-    height: 21px;
+    
     padding-bottom: 4px;
     width: auto
 }
 
-#team1name {
+#team1savebtn {
+    margin-bottom: 1px;
+}
+
+#team1input {
     margin-bottom: 1em; /* makes space under the input field */
 } 
 
-#team2name {
+#team2input {
     margin-bottom: 1em; /* makes space under the input field */
 };

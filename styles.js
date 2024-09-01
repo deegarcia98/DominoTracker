@@ -10,14 +10,20 @@ closeModal.addEventListener('click', () => {
     modal.close();
 });
 
-const firstTeamName = document.getElementById('team1name').value;
+const firstTeamName = document.getElementById('team1input').value;
 
-const secondTeamName = document.getElementById('team2name').value;
+const secondTeamName = document.getElementById('team2input').value;
 
-let team1 = {firstTeamName};
+window.localStorage.setItem('firstTeamName', 'secondTeamName');
 
-let team2 = {secondTeamName};
+team1savebtn.addEventListener('click', () => {})
 
-window.localStorage.setItem('team1', 'team2');
+team2savebtn.addEventListener('click', () => {})
 
-console.log(team1)
+const saveTeamName = () => {
+
+};
+
+function addScore() {};
+
+
