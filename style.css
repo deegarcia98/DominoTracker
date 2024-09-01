@@ -63,3 +63,17 @@ button.addrow {
 .close-button {
     margin: auto;
 }
+
+#userinput1 {
+    height: 21px;
+    padding-bottom: 4px;
+    width: auto
+}
+
+#team1name {
+    margin-bottom: 1em;
+}
+
+#team2name {
+    margin-bottom: 1em;
+}
