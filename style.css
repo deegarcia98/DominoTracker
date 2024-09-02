@@ -110,14 +110,15 @@ button.addrow {
 
 #round-score1{
     width: 50%;
-    border: 1px solid black;
+    
+    padding-left: 11%;
     
 }
 
 #round-score2{
     width: 50%;
-    border: 1px solid black;
-
+    
+    padding-right: 9%;
 }
 
 
