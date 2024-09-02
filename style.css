@@ -103,10 +103,21 @@ button.addrow {
 
 #scoreboard-container {
     text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 
-.score {
-    display: inline;
+
+#round-score1{
+    width: 50%;
+    border: 1px solid black;
+    
+}
+
+#round-score2{
+    width: 50%;
+    border: 1px solid black;
+
 }
 
 

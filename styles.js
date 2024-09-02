@@ -43,12 +43,12 @@ function addScoreTeam1() {
     })
 };
 
-const newScoreBoard
+//const newScoreBoard
 
-const cell1 = team1;
-cosnt cell2 = team2
+//const cell1 = team1;
+//cosnt cell2 = team2
 
-const 
+
 
 
 
