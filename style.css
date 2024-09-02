@@ -11,7 +11,7 @@ table {
     text-align: center;
     padding-left: 10%;
     padding-right: 10%;
-    background-color: white;
+    
     
 }
 
@@ -65,30 +65,37 @@ button.addrow {
 }
 
 #team1input {
-    
+    width: 8em;
     padding-bottom: 4px;
-    width: auto
+    margin-bottom: 1em; /* makes space under the input field */
 }
 
 #team2input {
-    
+    width: 8em;
     padding-bottom: 4px;
-    width: auto
+    margin-bottom: 1em; /* makes space under the input field */
 }
 
 #team1savebtn {
     margin-bottom: 1px;
+    margin-right: 2em;
 }
 
-#team1input {
-    margin-bottom: 1em; /* makes space under the input field */
-} 
-
-#team2input {
-    margin-bottom: 1em; /* makes space under the input field */
-};
-
-#team1name {
-    background-color: black;
-    height: 5px;
+#team2savebtn {
+    margin-bottom: 1px;
+    margin-right: 2em;
 }
+
+
+.team1score {
+    width: 4em;
+    text-align: center;
+}
+
+.team2score {
+    width: 4em;
+    text-align: center;
+}
+
+
+

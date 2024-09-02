@@ -25,6 +25,12 @@ team1savebtn.addEventListener('click', () => {
 
 team2savebtn.addEventListener('click', () => {
     let team2 = document.getElementById('team2input').value;
+    let nameDiv = document.getElementById('team2name');
+    nameDiv.innerHTML = team2;
+
+    if(team2 === '') {
+        alert('Please enter in a Team Name')
+    }
 })
 
 const saveTeamName = () => {
