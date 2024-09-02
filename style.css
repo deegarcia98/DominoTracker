@@ -1,4 +1,15 @@
+#modal {
+    max-width: 50%;
+    border: 0; /* removes black border from default modal styling */
+    box-shadow: 0 0 1em rgb(0 0 0 / .6); /* puts a small shadow around the modal box */
+    text-align: center;
+    
+}
 
+#modal::backdrop {
+    background: grey;
+    opacity: .5;
+}
 
 header, h1{
     text-align: center;
@@ -26,11 +37,7 @@ body {
 table, tr, th {
     border-bottom: 1.5px solid black;
     
-}
-
-/* input {
-    text-align: center;
-} */
+} 
 
 button.addrow {
     text-align: right;
@@ -45,19 +52,6 @@ button.addrow {
     margin: auto;
     position: relative;
     margin-top: 10%;
-}
-
-#modal {
-    max-width: 50%;
-    border: 0; /* removes black border from default modal styling */
-    box-shadow: 0 0 1em rgb(0 0 0 / .6); /* puts a small shadow around the modal box */
-    text-align: center;
-    
-}
-
-#modal::backdrop {
-    background: grey;
-    opacity: .5;
 }
 
 .close-button {
@@ -95,6 +89,24 @@ button.addrow {
 .team2score {
     width: 4em;
     text-align: center;
+}
+
+#team1name {
+    display: inline-block;
+    padding-left: 1em;
+}
+
+#team2name {
+    display: inline-block;
+    padding-left: 1em;
+}
+
+#scoreboard-container {
+    text-align: center;
+}
+
+.score {
+    display: inline;
 }
 
 
