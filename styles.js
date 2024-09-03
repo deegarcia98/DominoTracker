@@ -54,15 +54,16 @@ addScoreBtn1.addEventListener('click', () => {
 })
 
 function addScoreTeam1() {
-    const team1score = document.getElementById('add-score-btn1');
-    const scoreTable = document.getElementById('table-score');
-    2
+    
+    
 };
 
 //const newScoreBoard
 
-//const cell1 = team1;
-//cosnt cell2 = team2
+const newTd1 = document.createElement('td');
+scoreDivTeam1.setAttribute('id', 'round-score1')
+
+//cosnt newTd2 = document.createElement('td')
 
 
 
@@ -72,5 +73,5 @@ function addScoreTeam2() {
     
 };
 
-
+let log = console.log;
 
