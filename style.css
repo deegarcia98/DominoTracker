@@ -81,12 +81,12 @@ button.addrow {
 }
 
 
-.team1score {
+#team1score {
     width: 4em;
     text-align: center;
 }
 
-.team2score {
+#team2score {
     width: 4em;
     text-align: center;
 }

@@ -58,10 +58,13 @@ function addScoreTeam1() {
     
 };
 
-//const newScoreBoard
+function newScoreTeam1() {
+    const newTd1 = document.createElement('td');
+    newTd1.setAttribute('id', 'round-score1')
+    newTd1.value = `${}`
+}
 
-const newTd1 = document.createElement('td');
-scoreDivTeam1.setAttribute('id', 'round-score1')
+
 
 //cosnt newTd2 = document.createElement('td')
 
