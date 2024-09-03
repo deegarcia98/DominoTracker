@@ -68,10 +68,11 @@ function newScoreTeam1() {
 
 
     const template = `
-<td>${score1}</td>
-<td>${score2}</td>
+
+    <td>${score1}</td>
+    <td>${score2}</td>
 `
-tr.innerHTML += template;
+tr.innerHTML = template;
 
 }
 
