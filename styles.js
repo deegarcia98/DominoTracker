@@ -46,7 +46,7 @@ function clearTeam2() {
 
 
 
-//          Code for Adding the Score
+//          Code for Adding the Score       https://www.youtube.com/watch?v=zWIyJdJW6t8
 
 const team1Score = document.getElementById('team1score');
 const team2Score = document.getElementById('team2score');
@@ -60,12 +60,23 @@ addScoreBtn1.addEventListener('click', () => {
         newScoreTeam1();
 })
 
+/* think of using OOP to store the data for each team such as 
 
+const user1 = {
+name: "Will",
+score: 3,
+increment: function() {
+user1.score++}
+}
+
+Think of how you can apply this to your code.
+
+for more ideas/help         https://www.youtube.com/watch?v=aAAS9cEuFYI
+*/
 
 function newScoreTeam1() {
     let score1 = team1Score.value;
     let score2 = '0'
-
 
     const template = `
 
@@ -73,10 +84,12 @@ function newScoreTeam1() {
     <td>${score2}</td>
 `
 tr.innerHTML = template;
-
+console.log(template)
 }
 
-
+function addScoreTeam2() {
+    
+};
 
 
 
@@ -86,9 +99,7 @@ tr.innerHTML = template;
 
 
 
-function addScoreTeam2() {
-    
-};
+
 
 
 
