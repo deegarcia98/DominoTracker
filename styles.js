@@ -42,6 +42,33 @@ function clearTeam2() {
     secondTeamName.value = "";
 }
 
+/* think of using OOP to store the data for each team such as 
+
+const user1 = {
+name: "Will",
+score: 3,
+increment: function() {
+user1.score++}
+}
+
+Think of how you can apply this to your code.
+
+for more ideas/help         https://www.youtube.com/watch?v=aAAS9cEuFYI
+*/
+
+const team1 = {
+    name: 'firstTeamName',
+    score: 0,
+    
+};
+
+const team2 = {
+    name: 'secondTeamName',
+    score: 0,
+
+};
+
+
 
 
 //          Code for Adding the Score       https://www.youtube.com/watch?v=zWIyJdJW6t8
@@ -58,30 +85,7 @@ addScoreBtn1.addEventListener('click', () => {
         newScoreTeam1();
 })
 
-/* think of using OOP to store the data for each team such as 
 
-const user1 = {
-name: "Will",
-score: 3,
-increment: function() {
-user1.score++}
-}
-
-Think of how you can apply this to your code.
-
-for more ideas/help         https://www.youtube.com/watch?v=aAAS9cEuFYI
-*/
-const team1 = {
-    name: 'firstTeamName',
-    score: 0,
-    
-};
-
-const team2 = {
-    name: 'secondTeamName',
-    score: 0,
-
-};
 
 console.log(team1.name)
 
@@ -97,9 +101,7 @@ function newScoreTeam1() {
 tr.innerHTML = template;
 console.log(template)
 
-if (score1 != 0) {
-    score1 + team1Score;
-}
+
 }
 
 function addScoreTeam2() {
