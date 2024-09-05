@@ -21,9 +21,8 @@ const secondTeamName = document.getElementById('team2input');
 
 
 team1savebtn.addEventListener('click', () => {
-    const team1 = document.getElementById('team1input').value;
     const nameDiv = document.getElementById('team1name');
-    nameDiv.innerHTML = team1;
+    nameDiv.innerHTML = firstTeamName.value;
     clearTeam1();
 })
 
@@ -34,9 +33,8 @@ function clearTeam1() {
 
 
 team2savebtn.addEventListener('click', () => {
-    const team2 = document.getElementById('team2input').value;
     const nameDiv = document.getElementById('team2name');
-    nameDiv.innerHTML = team2;
+    nameDiv.innerHTML = secondTeamName.value;
     clearTeam2();
 })
 
@@ -73,6 +71,19 @@ Think of how you can apply this to your code.
 
 for more ideas/help         https://www.youtube.com/watch?v=aAAS9cEuFYI
 */
+const team1 = {
+    name: 'firstTeamName',
+    score: 0,
+    
+};
+
+const team2 = {
+    name: 'secondTeamName',
+    score: 0,
+
+};
+
+console.log(team1.name)
 
 function newScoreTeam1() {
     let score1 = team1Score.value;
