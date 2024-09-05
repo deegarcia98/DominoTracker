@@ -81,12 +81,12 @@ button.addrow {
 }
 
 
-#team1score {
+#score-input1 {
     width: 4em;
     text-align: center;
 }
 
-#team2score {
+#score-input2 {
     width: 4em;
     text-align: center;
 }
@@ -110,7 +110,7 @@ button.addrow {
 .score {
     font-weight: bold;
     font-family: "Bowlby One", serif;
-    font-size: 24px;
+    font-size: 36px;
     text-align: center;
     width: 4em;
 }

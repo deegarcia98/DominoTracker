@@ -64,7 +64,7 @@ const team1 = {
 
 const team2 = {
     name: 'secondTeamName',
-    score: 0,
+    score: 'team2score',
 
 };
 
@@ -73,8 +73,8 @@ const team2 = {
 
 //          Code for Adding the Score       https://www.youtube.com/watch?v=zWIyJdJW6t8
 
-const team1Score = document.getElementById('team1score');
-const team2Score = document.getElementById('team2score');
+const team1Score = document.getElementById('score-input1');
+const team2Score = document.getElementById('score-input2');
 
 const addScoreBtn1 = document.getElementById('add-score-btn1');
 const addScoreBtn2 = document.getElementById('add-score-btn2');
@@ -82,33 +82,37 @@ const addScoreBtn2 = document.getElementById('add-score-btn2');
 const tr = document.getElementById('scoreboard-tr')
 
 addScoreBtn1.addEventListener('click', () => {
-        newScoreTeam1();
+        addScoreTeam1();
 })
 
 
+const roundScore1 = document.getElementById('round-score1');
 
-console.log(team1.name)
 
-function newScoreTeam1() {
+function addScoreTeam1() {
     let score1 = team1Score.value;
     let score2 = '0'
 
     const template = `
-
     <td id='round-score1' class='score'>${score1}</td>
     <td id='round-score2' class='score'>${score2}</td>
 `
 tr.innerHTML = template;
-console.log(template)
-
 
 }
 
+addScoreBtn2.addEventListener('click', () => {
+    addScoreTeam2();
+})
+
 function addScoreTeam2() {
+    roundscore1 = team1Score;
+    let score2 = team2.score;
+
     
 };
 
-
+console.log(addScoreTeam2)
 
 //cosnt newTd2 = document.createElement('td')
 
