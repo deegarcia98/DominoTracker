@@ -80,8 +80,8 @@ function newScoreTeam1() {
 
     const template = `
 
-    <td>${score1}</td>
-    <td>${score2}</td>
+    <td id='round-score1' class='score'>${score1}</td>
+    <td id='round-score2' class='score'>${score2}</td>
 `
 tr.innerHTML = template;
 console.log(template)

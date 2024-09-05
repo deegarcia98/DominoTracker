@@ -107,6 +107,11 @@ button.addrow {
     justify-content: space-around;
 }
 
+.score {
+    font-weight: bold;
+    font-family: "Bowlby One", serif;
+    font-size: 24px;
+}
 
 
 
