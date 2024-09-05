@@ -85,6 +85,10 @@ function newScoreTeam1() {
 `
 tr.innerHTML = template;
 console.log(template)
+
+if (score1 != 0) {
+    score1 + team1Score;
+}
 }
 
 function addScoreTeam2() {
