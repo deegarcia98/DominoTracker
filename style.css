@@ -62,12 +62,14 @@ button.addrow {
     width: 8em;
     padding-bottom: 4px;
     margin-bottom: 1em; /* makes space under the input field */
+    text-align: center;
 }
 
 #team2input {
     width: 8em;
     padding-bottom: 4px;
     margin-bottom: 1em; /* makes space under the input field */
+    text-align: center;
 }
 
 #team1savebtn {
@@ -82,23 +84,25 @@ button.addrow {
 
 
 #score-input1 {
-    width: 4em;
     text-align: center;
 }
 
 #score-input2 {
-    width: 4em;
     text-align: center;
 }
 
 #team1name {
     display: inline-block;
     padding-left: 1em;
+    font-size:xx-large;
+    font-weight: bold;
 }
 
 #team2name {
     display: inline-block;
     padding-left: 1em;
+    font-size:xx-large;
+    font-weight: bold;
 }
 
 #scoreboard-container {
