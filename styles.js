@@ -42,31 +42,40 @@ function clearTeam2() {
     secondTeamName.value = "";
 }
 
+// const team1 = {
+//     name: firstTeamName,
+//     score: 0,
+    
+// };
+
+//  const team2 = {
+//     name: secondTeamName.value,
+//     score: 0,
+//  };
+
+//  console.log(secondTeamName.value)
+
 /* think of using OOP to store the data for each team such as 
 
-const user1 = {
-name: "Will",
-score: 3,
-increment: function() {
-user1.score++}
+function userCreator(name, score) {
+const newUser = {};
+newUser.name = name;
+newUser.score = score;
+newUser.increment = function () {
+    newUser.score++
+    }
+    return newUser;
 }
+
+const user1 = userCreator("Will", 3);
+const user2 = userCreator("Tim", 5)
+user1.increment()
+
 
 Think of how you can apply this to your code.
 
 for more ideas/help         https://www.youtube.com/watch?v=aAAS9cEuFYI
 */
-
-// const team1 = {
-//     name: 'firstTeamName',
-//     score: 0,
-    
-// };
-
-// const team2 = {
-//     name: 'secondTeamName',
-//     score: 'team2score',
-
-// };
 
 
 
@@ -82,11 +91,13 @@ const addScoreBtn2 = document.getElementById('add-score-btn2');
 const roundScore1 = document.getElementById('round-score1');
 const roundScore2 = document.getElementById('round-score2');
 
-let scoreOfTeam1 = 0;
-let scoreOfTeam2 = 0;
 
- roundScore1.innerHTML = scoreOfTeam1;
- roundScore2.innerHTML = scoreOfTeam2;
+
+let currentScore1 = 0;
+let currentScore2 = 0;
+
+//  roundScore1.innerHTML = scoreOfTeam1;
+//  roundScore2.innerHTML = scoreOfTeam2;
 
 const tr = document.getElementById('scoreboard-tr')
 
@@ -104,15 +115,24 @@ function addScoreTeam1() {
     <td id='round-score2' class='score'>${score2}</td>
 `
 tr.innerHTML = template;
+clearScoreInput();
 }
 
 addScoreBtn2.addEventListener('click', () => {
-    addScoreTeam2()
+    addScoreBtn2();
 })
 
 function addScoreTeam2() {
-    roundScore2.innerHTML = scoreInput2.value;
+    let sum = parseInt(scoreOfTeam2 + scoreInput2.value);
+    roundScore2.innerHTML = sum;
+    
 };
+
+function clearScoreInput() {
+    scoreInput1.value = "";
+    scoreInput2.value = "";
+}
+
 
 
 /* I need to make it so that when the Team1Btn is pressed the score is added,
