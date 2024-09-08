@@ -15,8 +15,9 @@ closeModal.addEventListener('click', () => {
 //          Code for setting the Team Name 
 
 const firstTeamName = document.getElementById('team1input');
-
 const secondTeamName = document.getElementById('team2input');
+let team1name = document.getElementById('team1name').value;
+let team2name = document.getElementById('team2name').value;
 
 
 
@@ -41,6 +42,86 @@ team2savebtn.addEventListener('click', () => {
 function clearTeam2() {
     secondTeamName.value = "";
 }
+
+
+
+//          Code for Adding the Score       
+
+const scoreInput1 = document.getElementById('score-input1');
+const scoreInput2 = document.getElementById('score-input2');
+
+const addScoreBtn1 = document.getElementById('add-score-btn1');
+const addScoreBtn2 = document.getElementById('add-score-btn2');
+
+const score1 = document.getElementById('score1');
+const score2 = document.getElementById('score2');
+
+
+let currentScore1 = 0;
+let currentScore2 = 0;
+
+score1.innerHTML = currentScore1;
+score2.innerHTML = currentScore2;
+
+addScoreBtn1.addEventListener('click', () => {
+    addScoreTeam1();
+});
+
+
+function addScoreTeam1() {
+    let score = parseInt(scoreInput1.value);
+    currentScore1 += score; // currentScore1 = currentScore1 + score;
+    score1.innerHTML = currentScore1;
+    clearScoreInput();
+    winnerTeam1();
+};
+
+console.log(currentScore1)
+
+addScoreBtn2.addEventListener('click', () => {
+    addScoreTeam2();
+});
+
+
+function addScoreTeam2() {
+    let score = parseInt(scoreInput2.value);
+    currentScore2 += score; // currentScore2 = currentScore2 + score;
+    score2.innerHTML = currentScore2;
+    clearScoreInput();
+    winnerTeam2();
+};
+
+
+function clearScoreInput() {
+    scoreInput1.value = "";
+    scoreInput2.value = "";
+};
+
+function winnerTeam1() {
+// alert to pop up with name of winning team displayed!
+    if(currentScore1 >= 150) {
+        alert(`Congratulations ${team1name}, You are the WINNER`)
+    }
+};
+
+function winnerTeam2() {
+// alert to pop up with name of winning team displayed!
+    if(currentScore2 >= 150) {
+
+}
+};
+
+
+
+
+
+
+
+/* I need to make it so that when the Team1Btn is pressed the score is added,
+but the score of team 2 is not changed or equals 0. 
+
+
+*/
 
 // const team1 = {
 //     name: firstTeamName,
@@ -76,72 +157,6 @@ Think of how you can apply this to your code.
 
 for more ideas/help         https://www.youtube.com/watch?v=aAAS9cEuFYI
 */
-
-
-
-
-//          Code for Adding the Score       
-
-const scoreInput1 = document.getElementById('score-input1');
-const scoreInput2 = document.getElementById('score-input2');
-
-const addScoreBtn1 = document.getElementById('add-score-btn1');
-const addScoreBtn2 = document.getElementById('add-score-btn2');
-
-const roundScore1 = document.getElementById('round-score1');
-const roundScore2 = document.getElementById('round-score2');
-
-
-
-let currentScore1 = 0;
-let currentScore2 = 0;
-
-//  roundScore1.innerHTML = scoreOfTeam1;
-//  roundScore2.innerHTML = scoreOfTeam2;
-
-const tr = document.getElementById('scoreboard-tr')
-
-
-addScoreBtn1.addEventListener('click', () => {
-    addScoreTeam1();
-})
-
-function addScoreTeam1() {
-    let score1 = scoreInput1.value;
-    let score2 = scoreInput2.value;
-
-    const template = `
-    <td id='round-score1' class='score'>${score1}</td>
-    <td id='round-score2' class='score'>${score2}</td>
-`
-tr.innerHTML = template;
-clearScoreInput();
-}
-
-addScoreBtn2.addEventListener('click', () => {
-    addScoreBtn2();
-})
-
-function addScoreTeam2() {
-    let sum = parseInt(scoreOfTeam2 + scoreInput2.value);
-    roundScore2.innerHTML = sum;
-    
-};
-
-function clearScoreInput() {
-    scoreInput1.value = "";
-    scoreInput2.value = "";
-}
-
-
-
-/* I need to make it so that when the Team1Btn is pressed the score is added,
-but the score of team 2 is not changed or equals 0. 
-
-
-*/
-
-
 
 
 
