@@ -17,36 +17,49 @@ closeModal.addEventListener('click', () => {
 const firstTeamName = document.getElementById('team1input');
 const secondTeamName = document.getElementById('team2input');
 
-const team1Name = firstTeamName.value;
-const team2Name = document.getElementById('team2name');
+const nameDiv1 = document.getElementById('team1name');
+const nameDiv2 = document.getElementById('team2name');
 
 
 
-console.log(team1Name)
+console.log(nameDiv1)
 
 
 team1savebtn.addEventListener('click', () => {
-    const nameDiv = document.getElementById('team1name');
-    nameDiv.innerHTML = firstTeamName.value;
+ //   const nameDiv = document.getElementById('team1name');
+    nameDiv1.innerHTML = firstTeamName.value;
     clearTeam1();
+})
+
+team2savebtn.addEventListener('click', () => {
+ //   const nameDiv = document.getElementById('team2name');
+    nameDiv2.innerHTML = secondTeamName.value;
+    clearTeam2();
 })
 
 function clearTeam1() {
     firstTeamName.value = "";
 }
 
-
-
-team2savebtn.addEventListener('click', () => {
-    const nameDiv = document.getElementById('team2name');
-    nameDiv.innerHTML = secondTeamName.value;
-    clearTeam2();
-})
-
 function clearTeam2() {
     secondTeamName.value = "";
 }
 
+function winnerTeam1() {
+    // alert to pop up with name of winning team displayed!
+        if(currentScore1 >= 150) {
+            alert(`Congratulations ${nameDiv1.innerHTML} , You are the WINNER`)
+        }
+//  I learned here that instead of using nameDiv1.value to display the wining teams name,
+//  I used nameDiv1.innerHTML to pull out the information from the HTML itself
+    };
+    
+    function winnerTeam2() {
+    // alert to pop up with name of winning team displayed!
+        if(currentScore2 >= 150) {
+            alert(`Congratualations ${nameDiv2.innerHTML}, You are the WINNER`)
+        }
+    };
 
 
 //          Code for Adding the Score       
@@ -68,9 +81,10 @@ score1.innerHTML = currentScore1;
 score2.innerHTML = currentScore2;
 
 
-
 addScoreBtn1.addEventListener('click', () => {
+    disableButton();
     addScoreTeam1();
+    clearScoreInput();
 });
 
 
@@ -78,16 +92,13 @@ function addScoreTeam1() {
     let score = parseInt(scoreInput1.value);
     currentScore1 += score; // currentScore1 = currentScore1 + score;
     score1.innerHTML = currentScore1;
-    clearScoreInput();
     winnerTeam1();
-    clickFunction();
     console.log(currentScore1)
 };
 
-
-
 addScoreBtn2.addEventListener('click', () => {
     addScoreTeam2();
+    clearScoreInput();
 });
 
 
@@ -105,25 +116,13 @@ function clearScoreInput() {
     scoreInput2.value = "";
 };
 
-function winnerTeam1() {
-// alert to pop up with name of winning team displayed!
-    if(currentScore1 >= 150) {
-        alert(`Congratulations ${team1Name.value}, You are the WINNER`)
+
+function disableButton() {
+    if (scoreInput1.value.length > 0) {
+        addScoreBtn1.disabled;
+    } else {
+        !addScoreBtn1.disabled;
     }
-};
-
-function winnerTeam2() {
-// alert to pop up with name of winning team displayed!
-    if(currentScore2 >= 150) {
-
-}
-};
-
-
-function clickFunction(evt) {
-    let input = scoreInput1.value.trim();
-    if(!input.length) return false;
-    return true;
 }
 
 
