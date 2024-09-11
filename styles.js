@@ -88,6 +88,7 @@ addScoreBtn1.addEventListener('click', () => {
 });
 
 addScoreBtn2.addEventListener('click', () => {
+    disableButton();
     addScoreTeam2();
     clearScoreInput();
 });
@@ -97,7 +98,8 @@ function addScoreTeam1() {
     currentScore1 += score; // currentScore1 = currentScore1 + score;
     score1.innerHTML = currentScore1;
     winnerTeam1();
-    console.log(currentScore1)
+    disableButton();
+    
 };
 
 function addScoreTeam2() {
@@ -105,6 +107,7 @@ function addScoreTeam2() {
     currentScore2 += score; // currentScore2 = currentScore2 + score;
     score2.innerHTML = currentScore2;
     winnerTeam2();
+    disableButton();
 };
 
 
@@ -119,6 +122,12 @@ function disableButton() {
         addScoreBtn1.disabled = true;
     } else {
         addScoreBtn1.disabled = false;
+    }
+
+    if (scoreInput2.value === '') {
+        addScoreBtn2.disabled = true;
+    } else {
+        addScoreBtn2.disabled = false;
     }
 }
 
