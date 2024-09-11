@@ -87,6 +87,10 @@ addScoreBtn1.addEventListener('click', () => {
     clearScoreInput();
 });
 
+addScoreBtn2.addEventListener('click', () => {
+    addScoreTeam2();
+    clearScoreInput();
+});
 
 function addScoreTeam1() {
     let score = parseInt(scoreInput1.value);
@@ -96,17 +100,10 @@ function addScoreTeam1() {
     console.log(currentScore1)
 };
 
-addScoreBtn2.addEventListener('click', () => {
-    addScoreTeam2();
-    clearScoreInput();
-});
-
-
 function addScoreTeam2() {
     let score = parseInt(scoreInput2.value);
     currentScore2 += score; // currentScore2 = currentScore2 + score;
     score2.innerHTML = currentScore2;
-    clearScoreInput();
     winnerTeam2();
 };
 
@@ -118,21 +115,18 @@ function clearScoreInput() {
 
 
 function disableButton() {
-    if (scoreInput1.value.length > 0) {
-        addScoreBtn1.disabled;
+    if (scoreInput1.value === '') {
+        addScoreBtn1.disabled = true;
     } else {
-        !addScoreBtn1.disabled;
+        addScoreBtn1.disabled = false;
     }
 }
 
 
 
 
-/* I need to make it so that when the Team1Btn is pressed the score is added,
-but the score of team 2 is not changed or equals 0. 
 
 
-*/
 
 // const team1 = {
 //     name: firstTeamName,

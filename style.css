@@ -16,7 +16,6 @@ header, h1{
 }
 
 
-
 table {
     width: 100%;
     text-align: center;
@@ -119,7 +118,12 @@ button.addrow {
     width: 4em;
 }
 
-
+/* The styling below is to remove the up and down buttons on the input fields with the type='text' */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 
 

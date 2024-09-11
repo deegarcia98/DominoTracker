@@ -17,8 +17,8 @@
           <th>
             <input id="team1input"  placeholder="Enter Team Name" >
             <button id="team1savebtn">Save</button>
-            <input id="score-input1" placeholder="Score" type="number" min="0" max="150">
-            <button id="add-score-btn1">Add Score</button>
+            <input id="score-input1" placeholder="Score" type="number" min="0" max="150" onkeyup="disableButton()">
+            <button id="add-score-btn1" disabled>Add Score</button>
           </th>
 
           <th><input id="team2input" type="text" placeholder="Enter Team Name">
@@ -41,7 +41,7 @@
         </tr>
       </table>
       
-    <!-- think of using objects to hold each teams information. OOP  -->
+      <!-- Congratulations DIV?? -->
 
     
      
