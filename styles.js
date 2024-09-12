@@ -121,6 +121,7 @@ function validateScore(score) {
     if(0 < scoreInt < 150) {
         return scoreInt
     }
+    
 };
 
 function updateElement(htmlElement, value) {
