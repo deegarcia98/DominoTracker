@@ -45,9 +45,9 @@ function clearTeam2() {
     secondTeamName.value = "";
 }
 
-function winnerTeam1() {
+function winnerTeam1(score) {
     // alert to pop up with name of winning team displayed!
-        if(currentScore1 >= 150) {
+        if(score >= 150) {
             alert(`Congratulations ${nameDiv1.innerHTML} , You are the WINNER`)
         }
 //  I learned here that instead of using nameDiv1.value to display the wining teams name,
@@ -60,6 +60,14 @@ function winnerTeam1() {
             alert(`Congratualations ${nameDiv2.innerHTML}, You are the WINNER`)
         }
     };
+
+function hasWon(score) {
+    return score >= 150
+    // if(score >= 150) {
+    //     return true
+    // } 
+    // return false
+}
 
 
 //          Code for Adding the Score       
@@ -82,34 +90,54 @@ score2.innerHTML = currentScore2;
 
 
 addScoreBtn1.addEventListener('click', () => {
-    disableButton();
-    addScoreTeam1();
+    let inputScore = validateScore(scoreInput1.value);
+    let currentScore = parseInt(score1.innerHTML)
+    let newScore = addScore(currentScore, inputScore) // currentScore = currentScore1, inputScore = inputScore
+    updateElement(score1, newScore)
+    let win = hasWon(newScore);
+    if(win) {
+        winnerAlert(nameDiv1.innerHTML)
+    };
     clearScoreInput();
+    // revceive the score, then ensure the score is a number in between 0-150
+    // then add the score to the team
+    // check score if Winner
 });
 
 addScoreBtn2.addEventListener('click', () => {
-    disableButton();
-    addScoreTeam2();
+    let inputscore = validateScore(scoreInput2.value)
+    let currentScore = parseInt(score2.innerHTML)
+    let newScore = addScore(currentScore, inputscore) // currentScore = currentScore1, inputScore = inputScore
+    updateElement(score2, newScore)
+    let win = hasWon(newScore);
+    if(win) {
+        winnerAlert(nameDiv2.innerHTML)
+    };
     clearScoreInput();
 });
 
-function addScoreTeam1() {
-    let score = parseInt(scoreInput1.value);
-    currentScore1 += score; // currentScore1 = currentScore1 + score;
-    score1.innerHTML = currentScore1;
-    winnerTeam1();
-    disableButton();
-    
+function winnerAlert(teamname) {
+    alert(`Congratulations ${teamname}, You are the Winner.`)
+}
+
+
+
+//function to replace the the repetition of adding score to each team 
+function addScore(currentScore, inputScore) {
+    currentScore += inputScore
+    return currentScore
+}
+
+function validateScore(score) {
+    let scoreInt = parseInt(score)
+    if(0 < scoreInt < 150) {
+        return scoreInt
+    }
 };
 
-function addScoreTeam2() {
-    let score = parseInt(scoreInput2.value);
-    currentScore2 += score; // currentScore2 = currentScore2 + score;
-    score2.innerHTML = currentScore2;
-    winnerTeam2();
-    disableButton();
-};
-
+function updateElement(htmlElement, value) {
+    htmlElement.innerHTML = value 
+}
 
 function clearScoreInput() {
     scoreInput1.value = "";
@@ -117,20 +145,9 @@ function clearScoreInput() {
 };
 
 
-function disableButton() {
-    if (scoreInput1.value === '') {
-        addScoreBtn1.disabled = true;
-    } else {
-        addScoreBtn1.disabled = false;
-    }
+function isNan() {
 
-    if (scoreInput2.value === '') {
-        addScoreBtn2.disabled = true;
-    } else {
-        addScoreBtn2.disabled = false;
-    }
 }
-
 
 
 
@@ -172,7 +189,18 @@ Think of how you can apply this to your code.
 for more ideas/help         https://www.youtube.com/watch?v=aAAS9cEuFYI
 */
 
+// function addScoreTeam1(score) {
+//     currentScore1 += score; // currentScore1 = currentScore1 + score;
+//     score1.innerHTML = currentScore1
+//     return currentScore1;
+// };
 
+// function addScoreTeam2() {
+// let score = parseInt(scoreInput2.value);
+// currentScore2 += score; // currentScore2 = currentScore2 + score;
+// score2.innerHTML = currentScore2;
+// winnerTeam2();
+// };
 
 
 
