@@ -90,36 +90,24 @@ score2.innerHTML = currentScore2;
 
 
 addScoreBtn1.addEventListener('click', () => {
-    let inputScore = validateScore(scoreInput1.value);
-    let currentScore = parseInt(score1.innerHTML)
-    let newScore = addScore(currentScore, inputScore) // currentScore = currentScore1, inputScore = inputScore
-    updateElement(score1, newScore)
-    let win = hasWon(newScore);
-    if(win) {
-        winnerAlert(nameDiv1.innerHTML)
-    };
-    clearScoreInput();
-    // revceive the score, then ensure the score is a number in between 0-150
-    // then add the score to the team
-    // check score if Winner
+    handleGame(scoreInput1, score1, nameDiv1)
 });
 
 addScoreBtn2.addEventListener('click', () => {
-    let inputscore = validateScore(scoreInput2.value)
-    let currentScore = parseInt(score2.innerHTML)
-    let newScore = addScore(currentScore, inputscore) // currentScore = currentScore1, inputScore = inputScore
-    updateElement(score2, newScore)
-    let win = hasWon(newScore);
-    if(win) {
-        winnerAlert(nameDiv2.innerHTML)
-    };
-    clearScoreInput();
+    handleGame(scoreInput2, score2, nameDiv2)
 });
 
-function winnerAlert(teamname) {
-    alert(`Congratulations ${teamname}, You are the Winner.`)
+function handleGame(userinputscore, scoreElement, nameElement) {
+    let inputscore = validateScore(userinputscore.value)
+    let currentScore = parseInt(scoreElement.innerHTML)
+    let newScore = addScore(currentScore, inputscore) // currentScore = currentScore1, inputScore = inputScore
+    updateElement(scoreElement, newScore)
+    let win = hasWon(newScore);
+    if(win) {
+        winnerAlert(nameElement.innerHTML)
+    };
+    clearScoreInput();
 }
-
 
 
 //function to replace the the repetition of adding score to each team 
@@ -144,6 +132,9 @@ function clearScoreInput() {
     scoreInput2.value = "";
 };
 
+function winnerAlert(teamname) {
+    alert(`Congratulations ${teamname}, You are the Winner.`)
+}
 
 function isNan() {
 
