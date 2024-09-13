@@ -33,14 +33,19 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+input {
+    border: none;
+    background-color: white;
+    background: #dbdbdb;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+}
+
 table, tr, th {
     border-bottom: 1.5px solid black;
     
 } 
-
-button.addrow {
-    text-align: right;
-}
 
 #roundscore, .team-score{
     text-align: center;
@@ -57,33 +62,17 @@ button.addrow {
     margin: auto;
 }
 
-#team1input {
-    width: 8em;
+.team-input {
+    width: 9em;
     padding-bottom: 4px;
     margin-bottom: 1em; /* makes space under the input field */
-    text-align: center;
-}
-
-#team2input {
-    width: 8em;
-    padding-bottom: 4px;
-    margin-bottom: 1em; /* makes space under the input field */
-    text-align: center;
+    height: 1em;
 }
 
 .team-save-btn {
     margin-bottom: 1px;
     margin-right: 2em;
 }
-/* #team1savebtn {
-    margin-bottom: 1px;
-    margin-right: 2em;
-}
-
-#team2savebtn {
-    margin-bottom: 1px;
-    margin-right: 2em;
-} */
 
 .score-input {
     text-align: center;
@@ -96,20 +85,6 @@ button.addrow {
     font-size: 48px;
     font-weight: bold;
 }
-
-/* #team1name {
-    display: inline-block;
-    padding-left: 1em;
-    font-size: 48px;
-    font-weight: bold;
-}
-
-#team2name {
-    display: inline-block;
-    padding-left: 1em;
-    font-size: 48px;
-    font-weight: bold;
-} */
 
 #scoreboard-tr {
     text-align: center;
