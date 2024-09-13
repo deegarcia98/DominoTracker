@@ -34,18 +34,39 @@ body {
 }
 
 input {
-    border: none;
-    background-color: white;
-    background: #dbdbdb;
-    border-radius: 3px;
-    justify-content: center;
-    align-items: center;
+    font-family: inherit;
+    border: 0;
+    border-bottom: 2px solid black;
+    outline: 0;
+    font-size: 1em;
+    color: black;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
 }
 
-table, tr, th {
-    border-bottom: 1.5px solid black;
-    
-} 
+input::placeholder {
+    color: #555555; 
+}
+input:placeholder-shown {
+    font-size: 1em;
+    cursor: text;
+    top: 20px;
+}
+
+button {
+    border: 2px solid rgb(24, 24, 24);
+    border-radius: 1em;
+    background-color: white;
+    padding: 0.5em 0.5em;
+    margin: 0.25em;
+}
+
+button:hover {
+    background-color: #555555;
+    color: white;
+}
+
 
 #roundscore, .team-score{
     text-align: center;
@@ -63,16 +84,15 @@ table, tr, th {
 }
 
 .team-input {
-    width: 9em;
-    padding-bottom: 4px;
-    margin-bottom: 1em; /* makes space under the input field */
-    height: 1em;
+    transition: 0.2s;
+    font-size: 1em;
+    color: black;
 }
 
-.team-save-btn {
+/* .team-save-btn {
     margin-bottom: 1px;
     margin-right: 2em;
-}
+} */
 
 .score-input {
     text-align: center;
