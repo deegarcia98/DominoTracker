@@ -91,10 +91,12 @@ score2.innerHTML = currentScore2;
 
 addScoreBtn1.addEventListener('click', () => {
     handleGame(scoreInput1, score1, nameDiv1)
+    clearScoreInput(scoreInput1);
 });
 
 addScoreBtn2.addEventListener('click', () => {
     handleGame(scoreInput2, score2, nameDiv2)
+    clearScoreInput(scoreInput2);
 });
 
 function handleGame(userinputscore, scoreElement, nameElement) {
@@ -105,8 +107,7 @@ function handleGame(userinputscore, scoreElement, nameElement) {
     let win = hasWon(newScore);
     if(win) {
         winnerAlert(nameElement.innerHTML)
-    };
-    clearScoreInput();
+    }
 }
 
 
@@ -128,9 +129,8 @@ function updateElement(htmlElement, value) {
     htmlElement.innerHTML = value 
 }
 
-function clearScoreInput() {
-    scoreInput1.value = "";
-    scoreInput2.value = "";
+function clearScoreInput(team) {
+    team.value = "";
 };
 
 function winnerAlert(teamname) {
