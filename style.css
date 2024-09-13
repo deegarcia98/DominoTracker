@@ -93,18 +93,18 @@ button.addrow {
 #team1name {
     display: inline-block;
     padding-left: 1em;
-    font-size:xx-large;
+    font-size: 64px;
     font-weight: bold;
 }
 
 #team2name {
     display: inline-block;
     padding-left: 1em;
-    font-size:xx-large;
+    font-size: 64px;
     font-weight: bold;
 }
 
-#scoreboard-container {
+#scoreboard-table {
     text-align: center;
     display: flex;
     justify-content: space-around;
@@ -113,9 +113,9 @@ button.addrow {
 .score {
     font-weight: bold;
     font-family: "Bowlby One", serif;
-    font-size: 36px;
+    font-size: 64px;
     text-align: center;
-    width: 4em;
+    width: 3em;
 }
 
 /* The styling below is to remove the up and down buttons on the input fields with the type='text' */
@@ -125,6 +125,12 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+.edit-btn-img {
+    display: flex;
+    justify-content: flex-end;
+    height: 1.3rem;
+    width: 2rem;
+}
 
 
 

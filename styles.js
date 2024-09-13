@@ -137,8 +137,8 @@ function winnerAlert(teamname) {
     alert(`Congratulations ${teamname}, You are the Winner.`)
 }
 
-function isNan() {
-
+function editButton(teamscore) {
+    
 }
 
 
