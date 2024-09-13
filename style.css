@@ -85,14 +85,10 @@ button.addrow {
     margin-right: 2em;
 } */
 
-
-#score-input1 {
+.score-input {
     text-align: center;
 }
 
-#score-input2 {
-    text-align: center;
-}
 
 .team-name {
     display: inline-block;

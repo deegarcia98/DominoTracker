@@ -138,9 +138,15 @@ function winnerAlert(teamname) {
 }
 
 function editButton(teamscore) {
-    
+
 }
 
+function resetButton(resetscore, resetname) {
+    // we need to reset the score back to 0
+    // we need to reset the name of the teams to empty strings ""
+    resetscore = 0;
+    resetname = "";
+}
 
 
 
