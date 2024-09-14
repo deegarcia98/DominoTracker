@@ -22,7 +22,7 @@ const nameDiv2 = document.getElementById('team2name');
 
 
 
-console.log(nameDiv1)
+
 
 
 team1savebtn.addEventListener('click', () => {
@@ -79,6 +79,8 @@ addScoreBtn2.addEventListener('click', () => {
     clearScoreInput(scoreInput2);
 });
 
+
+// handles the score, innerHTML of total score and if wins congrats message
 function handleGame(userinputscore, scoreElement, nameElement) {
     let inputscore = validateScore(userinputscore.value)
     let currentScore = parseInt(scoreElement.innerHTML)
@@ -98,6 +100,9 @@ function addScore(currentScore, inputScore) {
 }
 
 function validateScore(score) {
+    if (!score) {
+        return 0
+    }
     let scoreInt = parseInt(score)
     if(0 < scoreInt < 150) {
         return scoreInt
