@@ -130,11 +130,6 @@ input::-webkit-inner-spin-button {
     height: 2em;
 }
 
-.score-history {
-    /* display: flex;
-    justify-content: space-between; */
-}
-
 .edit-score-btn {
     display: flex;
     justify-content: flex-end;
