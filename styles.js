@@ -41,23 +41,6 @@ function clearTeamName(teamname) {
     teamname.value = ''
 }
 
-
-function winnerTeam1(score) {
-    // alert to pop up with name of winning team displayed!
-        if(score >= 150) {
-            alert(`Congratulations ${nameDiv1.innerHTML} , You are the WINNER`)
-        }
-//  I learned here that instead of using nameDiv1.value to display the wining teams name,
-//  I used nameDiv1.innerHTML to pull out the information from the HTML itself
-    };
-    
-    function winnerTeam2() {
-    // alert to pop up with name of winning team displayed!
-        if(currentScore2 >= 150) {
-            alert(`Congratualations ${nameDiv2.innerHTML}, You are the WINNER`)
-        }
-    };
-
 function hasWon(score) {
     return score >= 150
     // if(score >= 150) {
@@ -196,7 +179,21 @@ for more ideas/help         https://www.youtube.com/watch?v=aAAS9cEuFYI
 // winnerTeam2();
 // };
 
-
+// function winnerTeam1(score) {
+//     // alert to pop up with name of winning team displayed!
+//         if(score >= 150) {
+//             alert(`Congratulations ${nameDiv1.innerHTML} , You are the WINNER`)
+//         }
+// //  I learned here that instead of using nameDiv1.value to display the wining teams name,
+// //  I used nameDiv1.innerHTML to pull out the information from the HTML itself
+//     };
+    
+//     function winnerTeam2() {
+//     // alert to pop up with name of winning team displayed!
+//         if(currentScore2 >= 150) {
+//             alert(`Congratualations ${nameDiv2.innerHTML}, You are the WINNER`)
+//         }
+//     };
 
 
 
