@@ -28,22 +28,19 @@ console.log(nameDiv1)
 team1savebtn.addEventListener('click', () => {
  //   const nameDiv = document.getElementById('team1name');
     nameDiv1.innerHTML = firstTeamName.value;
-    clearTeam1();
+    clearTeamName(firstTeamName);
 })
 
 team2savebtn.addEventListener('click', () => {
  //   const nameDiv = document.getElementById('team2name');
     nameDiv2.innerHTML = secondTeamName.value;
-    clearTeam2();
+    clearTeamName(secondTeamName);
 })
 
-function clearTeam1() {
-    firstTeamName.value = "";
+function clearTeamName(teamname) {
+    teamname.value = ''
 }
 
-function clearTeam2() {
-    secondTeamName.value = "";
-}
 
 function winnerTeam1(score) {
     // alert to pop up with name of winning team displayed!
@@ -138,7 +135,6 @@ function winnerAlert(teamname) {
 }
 
 function editButton(teamscore) {
-
 }
 
 function resetButton(resetscore, resetname) {
