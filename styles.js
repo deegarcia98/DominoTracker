@@ -122,18 +122,23 @@ function winnerAlert(teamname) {
     alert(`Congratulations ${teamname}, You are the Winner.`)
 }
 
-function editButton(teamscore) {
-}
+function editButton(teamscore) {}
 
 const resetButton = document.getElementById('reset-game-btn')
 
-resetButton.addEventListener('click', resetGame())
+//resetButton.addEventListener('click', resetGame(nameDiv1, nameDiv2, score1, score2))
 
-function resetGame(resetscore, resetname) {
-    // we need to reset the score back to 0
-    // we need to reset the name of the teams to empty strings ""
-    resetscore = 0;
-    resetname = "";
+resetButton.addEventListener('click', () => {
+    resetGame(nameDiv1, nameDiv2, score1, score2)
+})
+
+function resetGame(resetfirstname, resetsecondname, resetfirstscore, resetsecondscore) {
+   
+    resetfirstname.innerHTML = "";
+    resetsecondname.innerHTML = "";
+    resetfirstscore.innerHTML = 0;
+    resetsecondscore.innerHTML = 0;
+    
 }
 
 
