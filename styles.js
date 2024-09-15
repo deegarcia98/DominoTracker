@@ -20,11 +20,6 @@ const secondTeamName = document.getElementById('team2input');
 const nameDiv1 = document.getElementById('team1name');
 const nameDiv2 = document.getElementById('team2name');
 
-
-
-
-
-
 team1savebtn.addEventListener('click', () => {
  //   const nameDiv = document.getElementById('team1name');
     nameDiv1.innerHTML = firstTeamName.value;
@@ -49,7 +44,6 @@ function hasWon(score) {
     // return false
 }
 
-
 //          Code for Adding the Score       
 
 const scoreInput1 = document.getElementById('score-input1');
@@ -61,13 +55,11 @@ const addScoreBtn2 = document.getElementById('add-score-btn2');
 const score1 = document.getElementById('score1');
 const score2 = document.getElementById('score2');
 
-
 let currentScore1 = 0;
 let currentScore2 = 0;
 
 score1.innerHTML = currentScore1;
 score2.innerHTML = currentScore2;
-
 
 addScoreBtn1.addEventListener('click', () => {
     handleGame(scoreInput1, score1, nameDiv1)
@@ -87,11 +79,11 @@ function handleGame(userinputscore, scoreElement, nameElement) {
     let newScore = addScore(currentScore, inputscore) // currentScore = currentScore1, inputScore = inputScore
     updateElement(scoreElement, newScore)
     let win = hasWon(newScore);
+
     if(win) {
         winnerAlert(nameElement.innerHTML)
     }
 }
-
 
 //function to replace the the repetition of adding score to each team 
 function addScore(currentScore, inputScore) {
@@ -126,23 +118,25 @@ function editButton(teamscore) {}
 
 const resetButton = document.getElementById('reset-game-btn')
 
-//resetButton.addEventListener('click', resetGame(nameDiv1, nameDiv2, score1, score2))
 
 resetButton.addEventListener('click', () => {
     resetGame(nameDiv1, nameDiv2, score1, score2)
 })
 
+
 function resetGame(resetfirstname, resetsecondname, resetfirstscore, resetsecondscore) {
-   
     resetfirstname.innerHTML = "";
     resetsecondname.innerHTML = "";
     resetfirstscore.innerHTML = 0;
     resetsecondscore.innerHTML = 0;
-    
 }
 
+function addToRounds() {
 
+}
 
+team1rounds = []
+team2rounds = []
 
 
 // const team1 = {
@@ -179,6 +173,8 @@ Think of how you can apply this to your code.
 
 for more ideas/help         https://www.youtube.com/watch?v=aAAS9cEuFYI
 */
+
+// Code before the REFACTOR OF 2024 (AP)
 
 // function addScoreTeam1(score) {
 //     currentScore1 += score; // currentScore1 = currentScore1 + score;
