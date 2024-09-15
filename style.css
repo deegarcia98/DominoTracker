@@ -119,18 +119,30 @@ input::-webkit-inner-spin-button {
     width: 2rem;
 }
 
-
-
 #score-history-container {
-    display: flex;
-    justify-content: center;
+    columns: 3;
     background-color: aqua;
     margin-left: 10%;
     margin-right: 10%;
     height: 2em;
 }
 
+.score-history {
+    display: flex;
+    justify-content: flex-end;
+    background-color: blueviolet;
+}
+
 .edit-score-btn {
     display: flex;
     justify-content: flex-end;
+    background-color: blueviolet;
+    
+}
+
+#reset-game-btn {
+    display: block;
+    margin: auto;
+    position: relative;
+    margin-top: 10%;
 }
