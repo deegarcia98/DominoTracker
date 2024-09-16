@@ -9,81 +9,98 @@
   </head>
   <body>
     <header>
-      <h1>
-        Cuban Domino's Score Tracker
-      </h1>
+      <h1>Cuban Domino's Score Tracker</h1>
     </header>
 
     <h2>Score Card</h2>
-    
+
     <table>
-        <tr>
-          <th>
-            <input id="team1input" class="team-input" placeholder="Enter Team Name">
-            <button id="team1savebtn" class="team-save-btn">Save</button>
-            <input id="score-input1" class="score-input" placeholder="Score" type="number" min="0" max="150">
-            <button id="add-score-btn1">Add Score</button>
-          </th>
+      <tr>
+        <th>
+          <input
+            id="team1input"
+            class="team-input"
+            placeholder="Enter Team Name"
+          />
+          <button id="team1savebtn" class="team-save-btn">Save</button>
+          <input
+            id="score-input1"
+            class="score-input"
+            placeholder="Score"
+            type="number"
+            min="0"
+            max="150"
+          />
+          <button id="add-score-btn1">Add Score</button>
+        </th>
 
-          <th><input id="team2input" class="team-input" type="text" placeholder="Enter Team Name">
-            <button id="team2savebtn" class='team-save-btn'>Save</button>
-            <input id="score-input2" class="score-input" placeholder="Score" type="number" min="0" max="150">
-            <button id="add-score-btn2" >Add Score</button>
-          </th>
-
-        </tr>
-        <tr>
-            <td><div id="team-name-container"><div id="team1name" class="team-name"></div></div></td>
-            <td><div id="team-name-container"><div id="team2name" class="team-name"></div></div></td>
-            <!-- <td>Edit</td> -->
-        </tr>
+        <th>
+          <input
+            id="team2input"
+            class="team-input"
+            type="text"
+            placeholder="Enter Team Name"
+          />
+          <button id="team2savebtn" class="team-save-btn">Save</button>
+          <input
+            id="score-input2"
+            class="score-input"
+            placeholder="Score"
+            type="number"
+            min="0"
+            max="150"
+          />
+          <button id="add-score-btn2">Add Score</button>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <div id="team-name-container">
+            <div id="team1name" class="team-name"></div>
+          </div>
+        </td>
+        <td>
+          <div id="team-name-container">
+            <div id="team2name" class="team-name"></div>
+          </div>
+        </td>
+        <!-- <td>Edit</td> -->
+      </tr>
     </table>
-    
-      <table id="scoreboard-table">
-        <tr id="scoreboard-tr">
-          <td id="score1" class="score"></td>
-          <td id="score2" class="score"></td>
-        </tr>
-      </table>
-      
-      <div id="score-history-container">
-        <table>
+
+    <table id="scoreboard-table">
+      <tr id="scoreboard-tr">
+        <td id="score1" class="score"></td>
+        <td id="score2" class="score"></td>
+      </tr>
+    </table>
+
+    <div id="score-history-container">
+      <table>
         <tr id="score-history-data">
           <td class="score-history">Team 1</td>
           <td class="score-history">Team 2</td>
           <td class="edit-score-btn">Edit Score</td>
         </tr>
       </table>
-      </div>
-      
-      <!-- Congratulations DIV?? -->
+    </div>
+
+    <!-- Congratulations DIV?? -->
 
     <button id="reset-game-btn">Reset Game</button>
-     
-    <button  class="rulesofgamebtn">Rules of the Game</button>
+
+    <button class="rulesofgamebtn">Rules of the Game</button>
 
     <dialog class="modal" id="modal">
       <h2>Rules of the Game</h2>
-      <p>Once the winning team is determined (by placing last domino in hand or lowest score), 
-        the losing team (and only the losing team) counts the value of their remaining fichas. 
-        This total is awarded to the winning team's score. 
-        The first team to reach 150 points wins the game.</p>
-        <button class="button close-button">Close</button>
+      <p>
+        Once the winning team is determined (by placing last domino in hand or
+        lowest score), the losing team (and only the losing team) counts the
+        value of their remaining fichas. This total is awarded to the winning
+        team's score. The first team to reach 150 points wins the game.
+      </p>
+      <button class="button close-button">Close</button>
     </dialog>
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
 
     <script src="styles.js"></script>
   </body>

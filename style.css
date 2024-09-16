@@ -1,148 +1,149 @@
 #modal {
-    max-width: 50%;
-    border: 0; /* removes black border from default modal styling */
-    box-shadow: 0 0 1em rgb(0 0 0 / .6); /* puts a small shadow around the modal box */
-    text-align: center;
-    
+  max-width: 50%;
+  border: 0; /* removes black border from default modal styling */
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.6); /* puts a small shadow around the modal box */
+  text-align: center;
 }
 
 #modal::backdrop {
-    background: grey;
-    opacity: .5;
+  background: grey;
+  opacity: 0.5;
 }
 
-header, h1{
-    text-align: center;
+header,
+h1 {
+  text-align: center;
 }
-
 
 table {
-    width: 100%;
-    text-align: center;
-    padding-left: 10%;
-    padding-right: 10%;
-    
+  width: 100%;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 body {
-    background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 input {
-    font-family: inherit;
-    border: 0;
-    border-bottom: 2px solid black;
-    outline: 0;
-    font-size: 1em;
-    color: black;
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
-    margin-left: 0.5em;
+  font-family: inherit;
+  border: 0;
+  border-bottom: 2px solid black;
+  outline: 0;
+  font-size: 1em;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  margin-left: 0.5em;
 }
 
 input::placeholder {
-    color: #555555; 
+  color: #555555;
 }
 input:placeholder-shown {
-    font-size: 1em;
-    cursor: text;
-    top: 20px;
+  font-size: 1em;
+  cursor: text;
+  top: 20px;
 }
 
 button {
-    border: 2px solid rgb(24, 24, 24);
-    border-radius: 1em;
-    background-color: white;
-    padding: 0.5em 0.5em;
-    margin: 0.25em;
+  border: 2px solid rgb(24, 24, 24);
+  border-radius: 1em;
+  background-color: white;
+  padding: 0.5em 0.5em;
+  margin: 0.25em;
 }
 
 button:hover {
-    background-color: #555555;
-    color: white;
+  background-color: #555555;
+  color: white;
 }
 
 .rulesofgamebtn {
-    display: block;
-    margin: auto;
-    position: relative;
-    margin-top: 10%;
+  display: block;
+  margin: auto;
+  position: relative;
+  margin-top: 10%;
 }
 
 .close-button {
-    margin: auto;
+  margin: auto;
 }
 
 .team-input {
-    transition: 0.2s;
-    font-size: 1em;
-    color: black;
+  transition: 0.2s;
+  font-size: 1em;
+  color: black;
 }
 
 .team-name {
-    display: inline-block;
-    padding-left: 1em;
-    font-size: 48px;
-    font-weight: bold;
+  display: inline-block;
+  padding-left: 1em;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.score-input {
+  width: 3em;
 }
 
 #scoreboard-tr {
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .score {
-    font-weight: bold;
-    font-family: "Bowlby One", serif;
-    font-size: 48px;
-    text-align: center;
-    width: 3em;
+  font-weight: bold;
+  font-family: "Bowlby One", serif;
+  font-size: 48px;
+  text-align: center;
+  width: 3em;
 }
 
 /* The styling below is to remove the up and down buttons on the input fields with the type='text' */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .edit-btn-img {
-    display: flex;
-    justify-content: flex-end;
-    height: 1.3rem;
-    width: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  height: 1.3rem;
+  width: 2rem;
 }
 
 #score-history-container {
-    columns: 3;
-    background-color: aqua;
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 2em;
+  columns: 3;
+  background-color: aqua;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 2em;
 }
 
 .score-history {
-    display: flex;
-    justify-content: flex-end;
-    background-color: blueviolet;
+  display: flex;
+  justify-content: flex-end;
+  background-color: blueviolet;
 }
 
 .edit-score-btn {
-    display: flex;
-    justify-content: flex-end;
-    background-color: blueviolet;
-    
+  display: flex;
+  justify-content: flex-end;
+  background-color: blueviolet;
 }
 
 #reset-game-btn {
-    display: block;
-    margin: auto;
-    position: relative;
-    margin-top: 10%;
+  display: block;
+  margin: auto;
+  position: relative;
+  margin-top: 10%;
 }
