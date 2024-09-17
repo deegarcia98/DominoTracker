@@ -130,16 +130,15 @@ input::-webkit-inner-spin-button {
 }
 
 .score-history {
-<<<<<<< HEAD
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background-color: blueviolet;
 }
 
 /* .edit-score-btn {
     display: flex;
     justify-content: flex-end;
-} */
+}  */
 
 #reset-game-btn {
     display: block;
@@ -151,22 +150,9 @@ input::-webkit-inner-spin-button {
 .score-history-header {
     text-align: center;
 }
-=======
-  display: flex;
-  justify-content: flex-end;
-  background-color: blueviolet;
-}
 
-.edit-score-btn {
-  display: flex;
-  justify-content: flex-end;
-  background-color: blueviolet;
+.edit-score-btn{
+    display: flex;
+    justify-content: flex-end;
+    background-color: yellow;
 }
-
-#reset-game-btn {
-  display: block;
-  margin: auto;
-  position: relative;
-  margin-top: 10%;
-}
->>>>>>> ea6cadfdfca625a64592d1d7b32f8eac6e3fd48d
