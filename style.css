@@ -114,15 +114,9 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.edit-btn-img {
-  display: flex;
-  justify-content: flex-end;
-  height: 1.3rem;
-  width: 2rem;
-}
-
 #score-history-container {
   columns: 3;
+
   background-color: aqua;
   margin-left: 10%;
   margin-right: 10%;
@@ -130,15 +124,10 @@ input::-webkit-inner-spin-button {
 }
 
 .score-history {
-    display: flex;
-    justify-content: space-between;
+    display: inline-block;
+    width: 18em;
     background-color: blueviolet;
 }
-
-/* .edit-score-btn {
-    display: flex;
-    justify-content: flex-end;
-}  */
 
 #reset-game-btn {
     display: block;
@@ -152,7 +141,9 @@ input::-webkit-inner-spin-button {
 }
 
 .edit-score-btn{
-    display: flex;
-    justify-content: flex-end;
+    display: block;
+    width: 10%;
+    float: right;
     background-color: yellow;
+
 }
