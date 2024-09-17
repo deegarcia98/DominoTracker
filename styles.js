@@ -79,7 +79,6 @@ function handleGame(userinputscore, scoreElement, nameElement) {
     let newScore = addScore(currentScore, inputscore) // currentScore = currentScore1, inputScore = inputScore
     updateElement(scoreElement, newScore)
     let win = hasWon(newScore);
-
     if(win) {
         winnerAlert(nameElement.innerHTML)
     }
