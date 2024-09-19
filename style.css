@@ -124,16 +124,21 @@ input::-webkit-inner-spin-button {
     text-align: center;
 }
 
+#score-history-data {
+  display: flex;
+  justify-content: space-between;
+}
+
 .score-history {
-    display: inline-block;
-    width: 18em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: blueviolet;
 }
 
 .edit-score-btn{
-    display: block;
-    width: 10%;
-    float: right;
+    display: flex;
+    justify-content: flex-end;
     background-color: yellow;
 
 }

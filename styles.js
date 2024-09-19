@@ -21,16 +21,22 @@ const nameDiv1 = document.getElementById('team1name');
 const nameDiv2 = document.getElementById('team2name');
 
 team1savebtn.addEventListener('click', () => {
- //   const nameDiv = document.getElementById('team1name');
-    nameDiv1.innerHTML = firstTeamName.value;
-    clearTeamName(firstTeamName);
+//   const nameDiv = document.getElementById('team1name');
+// nameDiv1.innerHTML = firstTeamName.value;
+// clearTeamName(firstTeamName);
+    addName(nameDiv1, firstTeamName)
 })
 
 team2savebtn.addEventListener('click', () => {
- //   const nameDiv = document.getElementById('team2name');
-    nameDiv2.innerHTML = secondTeamName.value;
-    clearTeamName(secondTeamName);
+//   const nameDiv = document.getElementById('team2name');
+// nameDiv2.innerHTML = secondTeamName.value;
+// clearTeamName(secondTeamName);
+    addName(nameDiv2, secondTeamName)
 })
+
+function addName(nameElement, nameval) {
+    nameElement.innerHTML = nameval.value
+}
 
 function clearTeamName(teamname) {
     teamname.value = ''
@@ -64,12 +70,12 @@ score2.innerHTML = currentScore2;
 addScoreBtn1.addEventListener('click', () => {
     handleGame(scoreInput1, score1, nameDiv1)
     clearScoreInput(scoreInput1);
-});
+})
 
 addScoreBtn2.addEventListener('click', () => {
     handleGame(scoreInput2, score2, nameDiv2)
     clearScoreInput(scoreInput2);
-});
+})
 
 
 // handles the score, innerHTML of total score and if wins congrats message
@@ -130,12 +136,20 @@ function resetGame(resetfirstname, resetsecondname, resetfirstscore, resetsecond
     resetsecondscore.innerHTML = 0;
 }
 
+const scoreHistory1 = document.getElementById('score-history-team1')
+const scoreHistory2 = document.getElementById('score-history-team2')
+
+
+
 function addToRounds() {
 
 }
 
-team1rounds = []
+team1rounds = [
+]
 team2rounds = []
+
+console.log(team1rounds.score)
 
 
 // const team1 = {
