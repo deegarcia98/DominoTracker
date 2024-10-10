@@ -12,30 +12,47 @@ closeModal.addEventListener('click', () => {
 });
 // window.localStorage.setItem('firstTeamName', 'secondTeamName');
 
+team1 = {
+    nameInput: document.getElementById('team1input'),
+    scoreDiv: document.getElementById('score1'),
+    scoreInput: document.getElementById('score-input1'),
+    nameDiv: document.getElementById('team1name'),
+    scoreButton: document.getElementById('add-score-btn1'),
+    currentScore: 0,
+    scoreHistory: [],
+}
+
+team2 = {
+    nameInput: document.getElementById('team2input'),
+    scoreDiv: document.getElementById('score2'),
+    scoreInput: document.getElementById('score-input2'),
+    nameDiv: document.getElementById('team2name'),
+    scoreButton: document.getElementById('add-score-btn2'),
+    currentScore: 0,
+    scoreHistory: [],
+}
+
+// Score History 
+
+
 //          Code for setting the Team Name 
-
-const firstTeamName = document.getElementById('team1input');
-const secondTeamName = document.getElementById('team2input');
-
-const nameDiv1 = document.getElementById('team1name');
-const nameDiv2 = document.getElementById('team2name');
 
 team1savebtn.addEventListener('click', () => {
 //   const nameDiv = document.getElementById('team1name');
 // nameDiv1.innerHTML = firstTeamName.value;
 // clearTeamName(firstTeamName);
-    addName(nameDiv1, firstTeamName)
+    addName(team1)
 })
 
 team2savebtn.addEventListener('click', () => {
 //   const nameDiv = document.getElementById('team2name');
 // nameDiv2.innerHTML = secondTeamName.value;
 // clearTeamName(secondTeamName);
-    addName(nameDiv2, secondTeamName)
+    addName(team2)
 })
 
-function addName(nameElement, nameval) {
-    nameElement.innerHTML = nameval.value
+function addName(team) {
+    team.nameDiv.innerHTML = team.nameInput.value
 }
 
 function clearTeamName(teamname) {
@@ -51,50 +68,33 @@ function hasWon(score) {
 }
 
 //          Code for Adding the Score       
+team1.scoreDiv.innerHTML = team1.currentScore;
+team2.scoreDiv.innerHTML = team2.currentScore;
 
-const scoreInput1 = document.getElementById('score-input1');
-const scoreInput2 = document.getElementById('score-input2');
-
-const addScoreBtn1 = document.getElementById('add-score-btn1');
-const addScoreBtn2 = document.getElementById('add-score-btn2');
-
-const score1 = document.getElementById('score1');
-const score2 = document.getElementById('score2');
-
-let currentScore1 = 0;
-let currentScore2 = 0;
-
-score1.innerHTML = currentScore1;
-score2.innerHTML = currentScore2;
-
-addScoreBtn1.addEventListener('click', () => {
-    handleGame(scoreInput1, score1, nameDiv1)
-    clearScoreInput(scoreInput1);
+team1.scoreButton.addEventListener('click', () => {
+    handleGame(team1)
+    //clearScoreInput(scoreInput1);
 })
 
-addScoreBtn2.addEventListener('click', () => {
-    handleGame(scoreInput2, score2, nameDiv2)
-    clearScoreInput(scoreInput2);
+team2.scoreButton.addEventListener('click', () => {
+    handleGame(team2)
+    //clearScoreInput(scoreInput2);
 })
-
 
 // handles the score, innerHTML of total score and if wins congrats message
-function handleGame(userinputscore, scoreElement, nameElement) {
-    let inputscore = validateScore(userinputscore.value)
-    let currentScore = parseInt(scoreElement.innerHTML)
-    let newScore = addScore(currentScore, inputscore) // currentScore = currentScore1, inputScore = inputScore
-    updateElement(scoreElement, newScore)
-    let win = hasWon(newScore);
+function handleGame(team) {
+    //  we need to take score from scoreInput and need to add to current score
+    team.currentScore += validateScore(team.scoreInput.value)
+    //  update score element with currentScore
+    team.scoreDiv.innerHTML = team.currentScore
+    //  than winner alert
+
+    let win = hasWon(team.currentScore);
     if(win) {
-        winnerAlert(nameElement.innerHTML)
+        winnerAlert(team.nameDiv.innerHTML)
     }
 }
 
-//function to replace the the repetition of adding score to each team 
-function addScore(currentScore, inputScore) {
-    currentScore += inputScore
-    return currentScore
-}
 
 function validateScore(score) {
     if (!score) {
@@ -107,9 +107,6 @@ function validateScore(score) {
     
 };
 
-function updateElement(htmlElement, value) {
-    htmlElement.innerHTML = value 
-}
 
 function clearScoreInput(team) {
     team.value = "";
@@ -144,79 +141,5 @@ const scoreHistory2 = document.getElementById('score-history-team2')
 function addToRounds() {
 
 }
-
-team1rounds = [
-]
-team2rounds = []
-
-console.log(team1rounds.score)
-
-
-// const team1 = {
-//     name: firstTeamName,
-//     score: 0,
-    
-// };
-
-//  const team2 = {
-//     name: secondTeamName.value,
-//     score: 0,
-//  };
-
-//  console.log(secondTeamName.value)
-
-/* think of using OOP to store the data for each team such as 
-
-function userCreator(name, score) {
-const newUser = {};
-newUser.name = name;
-newUser.score = score;
-newUser.increment = function () {
-    newUser.score++
-    }
-    return newUser;
-}
-
-const user1 = userCreator("Will", 3);
-const user2 = userCreator("Tim", 5)
-user1.increment()
-
-
-Think of how you can apply this to your code.
-
-for more ideas/help         https://www.youtube.com/watch?v=aAAS9cEuFYI
-*/
-
-// Code before the REFACTOR OF 2024 (AP)
-
-// function addScoreTeam1(score) {
-//     currentScore1 += score; // currentScore1 = currentScore1 + score;
-//     score1.innerHTML = currentScore1
-//     return currentScore1;
-// };
-
-// function addScoreTeam2() {
-// let score = parseInt(scoreInput2.value);
-// currentScore2 += score; // currentScore2 = currentScore2 + score;
-// score2.innerHTML = currentScore2;
-// winnerTeam2();
-// };
-
-// function winnerTeam1(score) {
-//     // alert to pop up with name of winning team displayed!
-//         if(score >= 150) {
-//             alert(`Congratulations ${nameDiv1.innerHTML} , You are the WINNER`)
-//         }
-// //  I learned here that instead of using nameDiv1.value to display the wining teams name,
-// //  I used nameDiv1.innerHTML to pull out the information from the HTML itself
-//     };
-    
-//     function winnerTeam2() {
-//     // alert to pop up with name of winning team displayed!
-//         if(currentScore2 >= 150) {
-//             alert(`Congratualations ${nameDiv2.innerHTML}, You are the WINNER`)
-//         }
-//     };
-
 
 
