@@ -20,8 +20,9 @@ team1 = {
     scoreButton: document.getElementById('add-score-btn1'),
     currentScore: 0,
     scoreHistory: [],
+    
 }
-
+console.log([team1.scoreHistory])
 team2 = {
     nameInput: document.getElementById('team2input'),
     scoreDiv: document.getElementById('score2'),
@@ -30,16 +31,14 @@ team2 = {
     scoreButton: document.getElementById('add-score-btn2'),
     currentScore: 0,
     scoreHistory: [],
+    
 }
 
 // Score History 
 
 function storeScore(team) {
-    team.scoreHistory.push(team.scoreInput.value)
-    console.log(team1.scoreInput.value)
-    console.log(team1.scoreHistory.length)
+    team.scoreHistory.push(validateScore(team.scoreInput.value))
 }
-
 //          Code for setting the Team Name 
 
 team1savebtn.addEventListener('click', () => {
@@ -81,13 +80,13 @@ team2.scoreDiv.innerHTML = team2.currentScore;
 team1.scoreButton.addEventListener('click', () => {
     handleGame(team1)
     clearScoreInput(team1)
-    storeScore(team1)
+    
 })
 
 team2.scoreButton.addEventListener('click', () => {
     handleGame(team2)
     clearScoreInput(team2);
-    //storeScore(team2)
+    
 })
 
 // handles the score, innerHTML of total score and if wins congrats message
@@ -97,6 +96,7 @@ function handleGame(team) {
     console.log('dee', team1.scoreInput.value)
     //  update score element with currentScore
     team.scoreDiv.innerHTML = team.currentScore
+    storeScore(team)
     //  than winner alert
     let win = hasWon(team.currentScore);
     if(win) {
