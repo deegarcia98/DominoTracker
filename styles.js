@@ -34,6 +34,11 @@ team2 = {
 
 // Score History 
 
+function storeScore(team) {
+    team.scoreHistory.push(team.scoreInput.value)
+    console.log(team1.scoreInput.value)
+    console.log(team1.scoreHistory.length)
+}
 
 //          Code for setting the Team Name 
 
@@ -42,6 +47,7 @@ team1savebtn.addEventListener('click', () => {
 // nameDiv1.innerHTML = firstTeamName.value;
 // clearTeamName(firstTeamName);
     addName(team1)
+    clearTeamName(team1)
 })
 
 team2savebtn.addEventListener('click', () => {
@@ -49,14 +55,15 @@ team2savebtn.addEventListener('click', () => {
 // nameDiv2.innerHTML = secondTeamName.value;
 // clearTeamName(secondTeamName);
     addName(team2)
+    clearTeamName(team2)
 })
 
 function addName(team) {
     team.nameDiv.innerHTML = team.nameInput.value
 }
 
-function clearTeamName(teamname) {
-    teamname.value = ''
+function clearTeamName(team) {
+    team.nameInput.value = ''
 }
 
 function hasWon(score) {
@@ -73,22 +80,24 @@ team2.scoreDiv.innerHTML = team2.currentScore;
 
 team1.scoreButton.addEventListener('click', () => {
     handleGame(team1)
-    //clearScoreInput(scoreInput1);
+    clearScoreInput(team1)
+    storeScore(team1)
 })
 
 team2.scoreButton.addEventListener('click', () => {
     handleGame(team2)
-    //clearScoreInput(scoreInput2);
+    clearScoreInput(team2);
+    //storeScore(team2)
 })
 
 // handles the score, innerHTML of total score and if wins congrats message
 function handleGame(team) {
     //  we need to take score from scoreInput and need to add to current score
     team.currentScore += validateScore(team.scoreInput.value)
+    console.log('dee', team1.scoreInput.value)
     //  update score element with currentScore
     team.scoreDiv.innerHTML = team.currentScore
     //  than winner alert
-
     let win = hasWon(team.currentScore);
     if(win) {
         winnerAlert(team.nameDiv.innerHTML)
@@ -109,7 +118,7 @@ function validateScore(score) {
 
 
 function clearScoreInput(team) {
-    team.value = "";
+    team.scoreInput.value = "";
 };
 
 function winnerAlert(teamname) {
