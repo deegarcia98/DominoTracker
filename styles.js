@@ -48,17 +48,11 @@ function showHistory(team) {
 //          Code for setting the Team Name
 
 team1savebtn.addEventListener("click", () => {
-  //   const nameDiv = document.getElementById('team1name');
-  // nameDiv1.innerHTML = firstTeamName.value;
-  // clearTeamName(firstTeamName);
   addName(team1);
   clearTeamName(team1);
 });
 
 team2savebtn.addEventListener("click", () => {
-  //   const nameDiv = document.getElementById('team2name');
-  // nameDiv2.innerHTML = secondTeamName.value;
-  // clearTeamName(secondTeamName);
   addName(team2);
   clearTeamName(team2);
 });
@@ -95,12 +89,9 @@ team2.scoreButton.addEventListener("click", () => {
 
 // handles the score, innerHTML of total score and if wins congrats message
 function handleGame(team) {
-  //  we need to take score from scoreInput and need to add to current score
   team.currentScore += validateScore(team.scoreInput.value);
-  //  update score element with currentScore
   team.scoreDiv.innerHTML = team.currentScore;
   storeScore(team);
-  //  than winner alert
   let win = hasWon(team.currentScore);
   if (win) {
     winnerAlert(team.nameDiv.innerHTML);
@@ -150,8 +141,5 @@ function resetGame(
   resetfirstscore.innerHTML = 0;
   resetsecondscore.innerHTML = 0;
 }
-
-const scoreHistory1 = document.getElementById("score-history-team1");
-const scoreHistory2 = document.getElementById("score-history-team2");
 
 function addToRounds() {}
