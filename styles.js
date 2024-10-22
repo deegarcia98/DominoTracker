@@ -35,13 +35,10 @@ team2 = {
   scoreHistory: [],
 };
 
-console.log(team1.scoreHistory);
-
 function showHistory(team) {
-  //team.historyDiv.innerHTML = [team.scoreHistory.value]
-  for (i = 0; i < team.scoreHistory.length; i++) {
-    team.historyDiv.innerHTML = team.scoreHistory[i];
-    //console.log(team.scoreHistory[i]);
+  for (let i = 0; i < team.scoreHistory.length; i++) {
+    team.historyDiv.innerHTML = team.scoreHistory;
+    console.log(team1.scoreHistory[i]);
   }
 }
 
@@ -80,11 +77,13 @@ team2.scoreDiv.innerHTML = team2.currentScore;
 team1.scoreButton.addEventListener("click", () => {
   handleGame(team1);
   clearScoreInput(team1);
+  showHistory(team1);
 });
 
 team2.scoreButton.addEventListener("click", () => {
   handleGame(team2);
   clearScoreInput(team2);
+  showHistory(team2);
 });
 
 // handles the score, innerHTML of total score and if wins congrats message

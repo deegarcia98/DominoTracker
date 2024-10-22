@@ -121,7 +121,7 @@ input::-webkit-inner-spin-button {
   height: 2em;
 }
 .score-history-header {
-    text-align: center;
+  text-align: center;
 }
 
 #score-history-data {
@@ -130,17 +130,16 @@ input::-webkit-inner-spin-button {
 }
 
 .score-history {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: blueviolet;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-color: blueviolet; */
 }
 
-.edit-score-btn{
-    display: flex;
-    justify-content: flex-end;
-    background-color: yellow;
-
+.edit-score-btn {
+  display: flex;
+  justify-content: flex-end;
+  background-color: yellow;
 }
 
 #reset-game-btn {
@@ -149,6 +148,3 @@ input::-webkit-inner-spin-button {
   position: relative;
   margin-top: 10%;
 }
-
-
-
