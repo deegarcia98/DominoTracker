@@ -35,13 +35,6 @@ team2 = {
   scoreHistory: [],
 };
 
-function showHistory(team) {
-  for (let i = 0; i < team.scoreHistory.length; i++) {
-    team.historyDiv.innerHTML = team.scoreHistory;
-    console.log(team1.scoreHistory[i]);
-  }
-}
-
 //          Code for setting the Team Name
 
 team1savebtn.addEventListener("click", () => {
@@ -99,6 +92,13 @@ function handleGame(team) {
 
 // Score History
 
+function showHistory(team) {
+  for (let i = 0; i < team.scoreHistory.length; i++) {
+    team.historyDiv.innerHTML = team.scoreHistory;
+    console.log(team1.scoreHistory[i]);
+  }
+}
+
 function storeScore(team) {
   team.scoreHistory.push(validateScore(team.scoreInput.value));
 }
@@ -126,19 +126,16 @@ function editButton(teamscore) {}
 const resetButton = document.getElementById("reset-game-btn");
 
 resetButton.addEventListener("click", () => {
-  resetGame(nameDiv1, nameDiv2, score1, score2);
+  resetGame(team1);
+  resetGame(team2);
 });
 
-function resetGame(
-  resetfirstname,
-  resetsecondname,
-  resetfirstscore,
-  resetsecondscore
-) {
-  resetfirstname.innerHTML = "";
-  resetsecondname.innerHTML = "";
-  resetfirstscore.innerHTML = 0;
-  resetsecondscore.innerHTML = 0;
+function resetGame(team) {
+  team.nameDiv.innerHTML = "";
+  team.scoreDiv.innerHTML = 0;
+  team.scoreHistory = 0;
 }
 
-function addToRounds() {}
+function addScoreToTable(team) {
+  const tableBody = D;
+}
