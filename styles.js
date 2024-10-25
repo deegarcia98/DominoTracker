@@ -137,5 +137,12 @@ function resetGame(team) {
 }
 
 function addScoreToTable(team) {
-  const tableBody = D;
+  // Get the table body element
+  const tableBody = document.getElementById("scoreTableBody");
+  //Create new row
+  const newRow = tableBody.insertRow();
+  // Create a new cell for the score
+  const scoreCell = newRow.insertCell();
+  // Add the score to the cell
+  scoreCell.textContent = score;
 }
