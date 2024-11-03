@@ -146,3 +146,5 @@ function addScoreToTable(team) {
   // Add the score to the cell
   scoreCell.textContent = score;
 }
+
+const myTable = document.getElementById("scoreTable");

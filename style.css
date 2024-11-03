@@ -115,7 +115,6 @@ input::-webkit-inner-spin-button {
 }
 
 #score-history-container {
-  background-color: aqua;
   margin-left: 10%;
   margin-right: 10%;
   height: 2em;
@@ -130,15 +129,15 @@ input::-webkit-inner-spin-button {
 }
 
 .score-history {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 .edit-score-btn {
-  display: flex;
+  /* display: flex;
   justify-content: flex-end;
-  background-color: yellow;
+  background-color: yellow; */
 }
 
 #reset-game-btn {
