@@ -55,6 +55,21 @@ function clearTeamName(team) {
   team.nameInput.value = "";
 }
 
+team2savebtn.addEventListener("keyup", (event) => {
+  event.preventDefault();
+  if (event.key === "Enter") {
+    addName(team2);
+    clearTeamName(team2);
+  }
+});
+
+// function enterPressed(team) {
+//     team2savebtn.addEventListener("keyup", () => {
+//         event.preventDefault()
+//         if(event.key === "Enter")
+//     })
+// }
+
 function hasWon(score) {
   return score >= 150;
   // if(score >= 150) {
