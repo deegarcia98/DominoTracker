@@ -128,17 +128,17 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
 }
 
-.score-history {
-  /* display: flex;
+/* .score-history {
+  display: flex;
   flex-direction: row;
-  justify-content: space-between; */
-}
+  justify-content: space-between;
+} */
 
-.edit-score-btn {
-  /* display: flex;
+/* .edit-score-btn {
+  display: flex;
   justify-content: flex-end;
-  background-color: yellow; */
-}
+  background-color: yellow;
+} */
 
 #reset-game-btn {
   display: block;

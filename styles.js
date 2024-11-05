@@ -55,11 +55,10 @@ function clearTeamName(team) {
   team.nameInput.value = "";
 }
 
-team2savebtn.addEventListener("keyup", (event) => {
+team1.nameInput.addEventListener("keypress", (event) => {
   event.preventDefault();
   if (event.key === "Enter") {
-    addName(team2);
-    clearTeamName(team2);
+    team1savebtn.click();
   }
 });
 
