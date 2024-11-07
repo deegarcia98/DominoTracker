@@ -40,7 +40,6 @@ team2 = {
 team1savebtn.addEventListener("click", () => {
   addName(team1);
   clearTeamName(team1);
-  validateNameInput(team1);
 });
 
 team2savebtn.addEventListener("click", () => {
@@ -48,27 +47,22 @@ team2savebtn.addEventListener("click", () => {
   clearTeamName(team2);
 });
 
-function validateNameInput(team) {
-  if (team.nameInput === "") {
-    alert("empty");
-    return false;
-  }
-  return true;
-}
+function validateNameInput(team) {}
 
 function addName(team) {
   team.nameDiv.innerHTML = team.nameInput.value;
 }
 
 function clearTeamName(team) {
-  team.nameInput.value = "";
+  team.nameInput = "";
+  //team.nameInput.value = "";
 }
 
 // Saving team names and score when enter is pressed
 team1.nameInput.addEventListener("keypress", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    team1savebtn.click();
+  if (event.key === "Enter" && team1.nameInput.length > 0) {
+    alert("Name must be filled out");
+    return false;
   }
 });
 
