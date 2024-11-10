@@ -11,6 +11,18 @@ closeModal.addEventListener("click", () => {
   modal.close();
 });
 
+function addElement() {
+  // create a new div element
+  const newDiv = document.createElement("div");
+  // and give it some content
+  const newContent = document.createTextNode("Hi there and greetings");
+  //add the text node to the newly created div
+  newDiv.appendChild(newContent);
+  // add the newly created element and its content into the Dom
+  const currentDiv = document.getElementById("div1");
+  document.body.insertBefore(newDiv, currentDiv);
+}
+
 // window.localStorage.setItem('firstTeamName', 'secondTeamName');
 
 team1 = {
@@ -49,8 +61,6 @@ team2savebtn.addEventListener("click", () => {
   clearTeamName(team2);
 });
 
-function validateNameInput(team) {}
-
 function addName(team) {
   team.nameDiv.innerHTML = team.nameInput.value;
 }
@@ -77,28 +87,29 @@ team2.nameInput.addEventListener("keyup", (e) => {
   }
 });
 
-team1.scoreInput.addEventListener("keypress", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
+team1.scoreInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
     validateScore();
     team1.scoreButton.click();
   }
 });
 
-team2.scoreInput.addEventListener("keypress", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
+team2.scoreInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
     validateScore();
     team2.scoreButton.click();
   }
 });
 
-// function enterPressed(team) {
-//     team2savebtn.addEventListener("keyup", () => {
-//         event.preventDefault()
-//         if(event.key === "Enter")
-//     })
-// }
+function validateNameInput(team) {
+  var x = team.nameInput;
+  if (x === "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
 
 function hasWon(score) {
   return score >= 150;
