@@ -15,6 +15,7 @@ closeModal.addEventListener("click", () => {
 
 team1 = {
   nameInput: document.getElementById("team1input"),
+  saveBtn: document.getElementById("team1savebtn"),
   scoreDiv: document.getElementById("score1"),
   scoreInput: document.getElementById("score-input1"),
   nameDiv: document.getElementById("team1name"),
@@ -26,6 +27,7 @@ team1 = {
 
 team2 = {
   nameInput: document.getElementById("team2input"),
+  saveBtn: document.getElementById("teamsavebtn"),
   scoreDiv: document.getElementById("score2"),
   scoreInput: document.getElementById("score-input2"),
   nameDiv: document.getElementById("team2name"),
@@ -54,22 +56,23 @@ function addName(team) {
 }
 
 function clearTeamName(team) {
-  team.nameInput = "";
+  team.nameInput.value = "";
   //team.nameInput.value = "";
 }
 
 // Saving team names and score when enter is pressed
-team1.nameInput.addEventListener("keypress", (event) => {
-  if (event.key === "Enter" && team1.nameInput.length > 0) {
-    alert("Name must be filled out");
-    return false;
+team1.nameInput.addEventListener("keyup", (e) => {
+  e.preventDefault();
+  if (e.key === "Enter") {
+    console.log("Enter has been pressed");
+    team1savebtn.click();
   }
 });
 
-team2.nameInput.addEventListener("keypress", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    clearTeamName;
+team2.nameInput.addEventListener("keyup", (e) => {
+  e.preventDefault();
+  if (e.key === "Enter") {
+    console.log("Enter has been pressed");
     team2savebtn.click();
   }
 });
