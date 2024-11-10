@@ -19,8 +19,8 @@ function addElement() {
   //add the text node to the newly created div
   newDiv.appendChild(newContent);
   // add the newly created element and its content into the Dom
-  const currentDiv = document.getElementById("div1");
-  document.body.insertBefore(newDiv, currentDiv);
+  // const currentDiv = document.getElementById("score-history-team1");
+  // document.insertBefore(newDiv, currentDiv);
 }
 
 // window.localStorage.setItem('firstTeamName', 'secondTeamName');
@@ -103,13 +103,13 @@ team2.scoreInput.addEventListener("keypress", (e) => {
   }
 });
 
-function validateNameInput(team) {
-  var x = team.nameInput;
-  if (x === "") {
-    alert("Name must be filled out");
-    return false;
-  }
-}
+// function validateNameInput(team) {
+//   var x = team.nameInput;
+//   if (x === "") {
+//     alert("Name must be filled out");
+//     return false;
+//   }
+// }
 
 function hasWon(score) {
   return score >= 150;
@@ -124,6 +124,7 @@ team1.scoreDiv.innerHTML = team1.currentScore;
 team2.scoreDiv.innerHTML = team2.currentScore;
 
 team1.scoreButton.addEventListener("click", () => {
+  addElement(team1);
   handleGame(team1);
   clearScoreInput(team1);
   showHistory(team1);
