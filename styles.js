@@ -64,7 +64,7 @@ function clearTeamName(team) {
 team1.nameInput.addEventListener("keyup", (e) => {
   e.preventDefault();
   if (e.key === "Enter") {
-    console.log("Enter has been pressed");
+    //console.log("Enter has been pressed");
     team1savebtn.click();
   }
 });
@@ -72,7 +72,7 @@ team1.nameInput.addEventListener("keyup", (e) => {
 team2.nameInput.addEventListener("keyup", (e) => {
   e.preventDefault();
   if (e.key === "Enter") {
-    console.log("Enter has been pressed");
+    //console.log("Enter has been pressed");
     team2savebtn.click();
   }
 });
