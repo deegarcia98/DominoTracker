@@ -124,7 +124,8 @@ team1.scoreDiv.innerHTML = team1.currentScore;
 team2.scoreDiv.innerHTML = team2.currentScore;
 
 team1.scoreButton.addEventListener("click", () => {
-  addElement(team1);
+  loadElement(team1);
+  //insertNewRow(team1);
   handleGame(team1);
   clearScoreInput(team1);
   showHistory(team1);
@@ -204,4 +205,20 @@ function addScoreToTable(team) {
   scoreCell.textContent = score;
 }
 
-const myTable = document.getElementById("scoreTable");
+function loadElement() {
+  let main = document.getElementById("tableRow");
+  let tr = document.createElement("tr");
+  tr.textContent = "This paragraph was created by insertAdjacentElement";
+  main.insertAdjacentElement("beforeEnd", tr);
+  // beforeBegin, afterBegin, beforeEnd, afteEnd
+}
+
+function insertNewRow() {
+  let main = document.getElementsById("tableRow");
+  let template = `
+      <tr>
+            <td>'This paragraph was created by insertAdjacentElement'</td>
+      </tr>
+  `;
+  main.insertAdjacentElement("beforeEnd", tr);
+}
