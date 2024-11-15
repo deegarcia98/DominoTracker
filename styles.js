@@ -214,10 +214,10 @@ function loadElement() {
 }
 
 function insertNewRow() {
-  let main = document.getElementsById("tableRow");
+  let main = document.getElementById("tableRow");
   let template = document.createElement("template");
-  template.textContent = `<tr>
+  template.innerHTML = `<tr>
             <td>'team1.scoreHistory[i]</td>
       </tr>`;
-  main.insertAdjacentElement("afterEnd", tr);
+  main.insertAdjacentElement("beforeEnd", template);
 }
