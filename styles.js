@@ -126,7 +126,6 @@ team2.scoreDiv.innerHTML = team2.currentScore;
 team1.scoreButton.addEventListener("click", () => {
   //loadElement(team1);
   newHistorRow();
-  console.log(newHistorRow())
   handleGame(team1);
   clearScoreInput(team1);
   showHistory(team1);
@@ -218,8 +217,7 @@ function loadElement() {
 function newHistorRow() {
   let main = document.getElementById("score-history-container");
   let newRow = main.insertRow(-1);
-  //let newCell = newRow.insertCell(0)
-  let newText = document.createTextNode(team1.scoreInput)
+  let newText = document.createTextNode('REEEEEEE')
   newRow.appendChild(newText)
   //newRow.textContent = "This paragraph was created by insertAdjacentElement";
   // return main.insertAdjacentElement("beforeEnd", newRow);
