@@ -124,8 +124,8 @@ team1.scoreDiv.innerHTML = team1.currentScore;
 team2.scoreDiv.innerHTML = team2.currentScore;
 
 team1.scoreButton.addEventListener("click", () => {
-  //loadElement(team1);
-  insertNewRow(team1);
+  //addRow(team1);
+  //insertNewRow(team1);
   handleGame(team1);
   clearScoreInput(team1);
   showHistory(team1);
@@ -220,4 +220,17 @@ function insertNewRow() {
             <td>'team1.scoreHistory[i]</td>
       </tr>`;
   main.insertAdjacentElement("beforeEnd", template);
+}
+
+function addRow(tableID) {
+  // get the table element
+  let table = document.getElementById(tableID)
+  // create a new row
+  let newRow = table.insertRow()
+  // add cells to the row
+  for (let i = 0;i < 3; i++) {
+    let newCell = newRow.insertCell()
+    let newText = document.createTextNode(`Cell ${i+1}`)
+    newCell.appendChild(newText)
+  }
 }
