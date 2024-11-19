@@ -124,8 +124,9 @@ team1.scoreDiv.innerHTML = team1.currentScore;
 team2.scoreDiv.innerHTML = team2.currentScore;
 
 team1.scoreButton.addEventListener("click", () => {
-  //addRow(team1);
-  //insertNewRow(team1);
+  //loadElement(team1);
+  newHistorRow();
+  console.log(newHistorRow())
   handleGame(team1);
   clearScoreInput(team1);
   showHistory(team1);
@@ -209,28 +210,46 @@ function loadElement() {
   let main = document.getElementById("tableRow");
   let tr = document.createElement("tr");
   tr.textContent = "This paragraph was created by insertAdjacentElement";
-  main.insertAdjacentElement("beforeEnd", tr);
+  return main.insertAdjacentElement("beforeEnd", tr);
   // beforeBegin, afterBegin, beforeEnd, afteEnd
 }
 
-function insertNewRow() {
-  let main = document.getElementById("tableRow");
-  let template = document.createElement("template");
-  template.innerHTML = `<tr>
-            <td>'team1.scoreHistory[i]</td>
-      </tr>`;
-  main.insertAdjacentElement("beforeEnd", template);
+
+function newHistorRow() {
+  let main = document.getElementById("score-history-container");
+  let newRow = main.insertRow(-1);
+  //let newCell = newRow.insertCell(0)
+  let newText = document.createTextNode(team1.scoreInput)
+  newRow.appendChild(newText)
+  //newRow.textContent = "This paragraph was created by insertAdjacentElement";
+  // return main.insertAdjacentElement("beforeEnd", newRow);
+  // beforeBegin, afterBegin, beforeEnd, afteEnd
 }
 
-function addRow(tableID) {
-  // get the table element
-  let table = document.getElementById(tableID)
-  // create a new row
-  let newRow = table.insertRow()
-  // add cells to the row
-  for (let i = 0;i < 3; i++) {
-    let newCell = newRow.insertCell()
-    let newText = document.createTextNode(`Cell ${i+1}`)
-    newCell.appendChild(newText)
-  }
-}
+
+
+
+
+
+
+// function insertNewRow() {
+//   let main = document.getElementById("tableRow");
+//   let template = document.createElement("template");
+//   template.innerHTML = `<tr>
+//             <td>'team1.scoreHistory[i]</td>
+//       </tr>`;
+//   main.insertAdjacentElement("beforeEnd", template);
+// }
+
+// function addRow(tableID) {
+//   // get the table element
+//   let table = document.getElementById(tableID)
+//   // create a new row
+//   let newRow = table.insertRow()
+//   // add cells to the row
+//   for (let i = 0;i < 3; i++) {
+//     let newCell = newRow.insertCell()
+//     let newText = document.createTextNode(`Cell ${i+1}`)
+//     newCell.appendChild(newText)
+//   }
+// }
