@@ -124,7 +124,7 @@ team1.scoreDiv.innerHTML = team1.currentScore
 team2.scoreDiv.innerHTML = team2.currentScore
 
 team1.scoreButton.addEventListener("click", () => {
-  newHistorRow(team1)
+  newHistorRow()
   handleGame(team1)
   clearScoreInput(team1)
   // showHistory(team1);
@@ -194,25 +194,6 @@ function resetGame(team) {
   team.scoreHistory = 0
 }
 
-function addScoreToTable() {
-  // Get the table body element
-  const tableBody = document.getElementById("scoreTableBody")
-  //Create new row
-  const newRow = tableBody.insertRow()
-  // Create a new cell for the score
-  const scoreCell = newRow.insertCell()
-  // Add the score to the cell
-  scoreCell.textContent = score
-}
-
-function loadElement() {
-  let main = document.getElementById("tableRow")
-  let tr = document.createElement("tr")
-  tr.textContent = "This paragraph was created by insertAdjacentElement"
-  return main.insertAdjacentElement("beforeEnd", tr)
-  // beforeBegin, afterBegin, beforeEnd, afteEnd
-}
-
 
 function newHistorRow() {
   let main = document.getElementById("score-history-container")
@@ -224,15 +205,30 @@ function newHistorRow() {
   // beforeBegin, afterBegin, beforeEnd, afteEnd
 }
 
+// function addScoreToTable() {
+//   // Get the table body element
+//   const tableBody = document.getElementById("scoreTableBody")
+//   //Create new row
+//   const newRow = tableBody.insertRow()
+//   // Create a new cell for the score
+//   const scoreCell = newRow.insertCell()
+//   // Add the score to the cell
+//   scoreCell.textContent = score
+// }
+
+// function loadElement() {
+//   let main = document.getElementById("tableRow")
+//   let tr = document.createElement("tr")
+//   tr.textContent = "This paragraph was created by insertAdjacentElement"
+//   return main.insertAdjacentElement("beforeEnd", tr)
+//   // beforeBegin, afterBegin, beforeEnd, afteEnd
+// }
+
 // function is going to be creating a new row when either teams score button is pressed
 // we need to add a new table row with both cells
 // display the value of team.scoreInput in the corresponding side of team that won the round
 // then we make the other teams score 0
 // not sure if the edit button can be added seperately but if so add edit button
-
-
-
-
 
 // function insertNewRow() {
 //   let main = document.getElementById("tableRow");
