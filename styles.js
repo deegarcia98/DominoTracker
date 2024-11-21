@@ -124,14 +124,16 @@ team1.scoreDiv.innerHTML = team1.currentScore
 team2.scoreDiv.innerHTML = team2.currentScore
 
 team1.scoreButton.addEventListener("click", () => {
-  newHistorRow()
+  team1WinsHistory()
+  //newHistorRow()
   handleGame(team1)
   clearScoreInput(team1)
   // showHistory(team1);
 });
 
 team2.scoreButton.addEventListener("click", () => {
-  newHistorRow(team2)
+  team2WinsHistory()
+  //newHistorRow(team2)
   handleGame(team2)
   clearScoreInput(team2)
   //showHistory(team2);
@@ -205,49 +207,24 @@ function newHistorRow() {
   // beforeBegin, afterBegin, beforeEnd, afteEnd
 }
 
-// function addScoreToTable() {
-//   // Get the table body element
-//   const tableBody = document.getElementById("scoreTableBody")
-//   //Create new row
-//   const newRow = tableBody.insertRow()
-//   // Create a new cell for the score
-//   const scoreCell = newRow.insertCell()
-//   // Add the score to the cell
-//   scoreCell.textContent = score
-// }
+function newRow() {
+  main = document.getElementById('score-history-container')
+  newTableRow = main.insertRow(-1)
+  cellData = '<tr><td>"Winner"</td><td>"Loser"</td></tr>'
+  newTableRow.innerHTML = cellData
+}
 
-// function loadElement() {
-//   let main = document.getElementById("tableRow")
-//   let tr = document.createElement("tr")
-//   tr.textContent = "This paragraph was created by insertAdjacentElement"
-//   return main.insertAdjacentElement("beforeEnd", tr)
-//   // beforeBegin, afterBegin, beforeEnd, afteEnd
-// }
+function team1WinsHistory(){
+  main = document.getElementById('score-history-container')
+  newTableRow = main.insertRow(-1)
+  cellData = `<tr><td>${team1.scoreInput.value}</td><td>0</td></tr>`
+  newTableRow.innerHTML = cellData
+}
 
-// function is going to be creating a new row when either teams score button is pressed
-// we need to add a new table row with both cells
-// display the value of team.scoreInput in the corresponding side of team that won the round
-// then we make the other teams score 0
-// not sure if the edit button can be added seperately but if so add edit button
+function team2WinsHistory() {
+  main = document.getElementById('score-history-container')
+  newTableRow = main.insertRow(-1)
+  cellData = `<tr><td>0</td><td>${team2.scoreInput.value}</td></tr>`
+  newTableRow.innerHTML = cellData
+}
 
-// function insertNewRow() {
-//   let main = document.getElementById("tableRow");
-//   let template = document.createElement("template");
-//   template.innerHTML = `<tr>
-//             <td>'team1.scoreHistory[i]</td>
-//       </tr>`;
-//   main.insertAdjacentElement("beforeEnd", template);
-// }
-
-// function addRow(tableID) {
-//   // get the table element
-//   let table = document.getElementById(tableID)
-//   // create a new row
-//   let newRow = table.insertRow()
-//   // add cells to the row
-//   for (let i = 0;i < 3; i++) {
-//     let newCell = newRow.insertCell()
-//     let newText = document.createTextNode(`Cell ${i+1}`)
-//     newCell.appendChild(newText)
-//   }
-// }
