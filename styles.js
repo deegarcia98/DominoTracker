@@ -228,3 +228,10 @@ function team2WinsHistory() {
   newTableRow.innerHTML = cellData
 }
 
+function emptyScore(team) {
+  // this function is to show an alert when the player 
+  //presses the add score button and there is nothing in the input field
+  if(team.scoreInput.length = 0) {
+    alert('Please provide Score')
+  }
+}
