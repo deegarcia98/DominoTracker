@@ -125,14 +125,13 @@ team2.scoreDiv.innerHTML = team2.currentScore
 
 team1.scoreButton.addEventListener("click", () => {
   team1WinsHistory()
-  //newHistorRow()
+  emptyScore(team1)
   handleGame(team1)
-  clearScoreInput(team1)
-  // showHistory(team1);
 });
 
 team2.scoreButton.addEventListener("click", () => {
   team2WinsHistory()
+  emptyScore(team1)
   //newHistorRow(team2)
   handleGame(team2)
   clearScoreInput(team2)
@@ -197,22 +196,8 @@ function resetGame(team) {
 }
 
 
-function newHistorRow() {
-  let main = document.getElementById("score-history-container")
-  let newRow = main.insertRow(-1)
-  let newText = document.createTextNode(`${team.scoreInput.value}`)
-  newRow.appendChild(newText)
-  //newRow.textContent = "This paragraph was created by insertAdjacentElement";
-  // return main.insertAdjacentElement("beforeEnd", newRow);
-  // beforeBegin, afterBegin, beforeEnd, afteEnd
-}
 
-function newRow() {
-  main = document.getElementById('score-history-container')
-  newTableRow = main.insertRow(-1)
-  cellData = '<tr><td>"Winner"</td><td>"Loser"</td></tr>'
-  newTableRow.innerHTML = cellData
-}
+
 
 function team1WinsHistory(){
   main = document.getElementById('score-history-container')
@@ -231,7 +216,7 @@ function team2WinsHistory() {
 function emptyScore(team) {
   // this function is to show an alert when the player 
   //presses the add score button and there is nothing in the input field
-  if(team.scoreInput.length = 0) {
-    alert('Please provide Score')
+  if(team.scoreInput.value = '') {
+    return alert('Please provide Score')
   }
 }
