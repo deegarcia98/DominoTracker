@@ -124,18 +124,19 @@ team1.scoreDiv.innerHTML = team1.currentScore
 team2.scoreDiv.innerHTML = team2.currentScore
 
 team1.scoreButton.addEventListener("click", () => {
-  team1WinsHistory()
+  winningTeamHistory(cellData)
+  //verifyHandleGameFunc()
   emptyScore(team1)
   handleGame(team1)
+  clearScoreInput(team1)
 });
 
 team2.scoreButton.addEventListener("click", () => {
   team2WinsHistory()
-  emptyScore(team1)
-  //newHistorRow(team2)
+  //verifyHandleGameFunc()
+  emptyScore(team2)
   handleGame(team2)
   clearScoreInput(team2)
-  //showHistory(team2);
 });
 
 // handles the score, innerHTML of total score and if wins congrats message
@@ -192,12 +193,8 @@ resetButton.addEventListener("click", () => {
 function resetGame(team) {
   team.nameDiv.innerHTML = ""
   team.scoreDiv.innerHTML = 0
-  team.scoreHistory = 0
+  team.scoreHistory = []
 }
-
-
-
-
 
 function team1WinsHistory(){
   main = document.getElementById('score-history-container')
@@ -213,10 +210,31 @@ function team2WinsHistory() {
   newTableRow.innerHTML = cellData
 }
 
+function winningTeamHistory(cellData, td2) {
+  main = document.getElementById('score-history-container')
+  newTableRow = main.insertRow(-1)
+  cellData = {
+    team1: `<tr><td>0</td><td>${team1.scoreInput.value}</td></tr>`,
+    //team2: `<tr><td>0</td><td>${team2.scoreInput.value}</td></tr>`
+  }
+  td2 = {
+    prop: `<tr><td>0</td><td>${team2.scoreInput.value}</td></tr>`
+  }
+  newTableRow.innerHTML = cellData.team
+}
+
 function emptyScore(team) {
   // this function is to show an alert when the player 
   //presses the add score button and there is nothing in the input field
-  if(team.scoreInput.value = '') {
+  if(team.scoreInput.value === '') {
     return alert('Please provide Score')
+  }
+}
+
+function verifyHandleGameFunc() {
+  if(emptyScore == true) {
+    emptyScore()
+  } else {
+    handleGame(team)
   }
 }
