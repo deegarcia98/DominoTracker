@@ -124,21 +124,14 @@ team1.scoreDiv.innerHTML = team1.currentScore
 team2.scoreDiv.innerHTML = team2.currentScore
 
 team1.scoreButton.addEventListener("click", () => {
-  //winningTeamHistory(winningTeam)
-  //verifyHandleGameFunc()
   emptyScore(team1)
   handleGame(team1)
-  //winnerFunc(team1)
   clearScoreInput(team1)
 });
 
 team2.scoreButton.addEventListener("click", () => {
-  //team2WinsHistory()
-  //winningTeamHistory(winningTeam)
-  //verifyHandleGameFunc()
   emptyScore(team2)
   handleGame(team2)
-  //winnerFunc(team2)
   clearScoreInput(team2)
 });
 
@@ -200,32 +193,6 @@ function resetGame(team) {
   team.scoreHistory = []
 }
 
-// function team1WinsHistory(){
-//   main = document.getElementById('score-history-container')
-//   newTableRow = main.insertRow(-1)
-//   cellData = `<tr><td>${team1.scoreInput.value}</td><td>0</td></tr>`
-//   newTableRow.innerHTML = cellData
-// }
-
-function team2WinsHistory() {
-  main = document.getElementById('score-history-container')
-  newTableRow = main.insertRow(-1)
-  cellData = `<tr><td>0</td><td>${team2.scoreInput.value}</td></tr>`
-  newTableRow.innerHTML = cellData
-}
-
-function winningTeamHistory(t1, t2) {
-  main = document.getElementById('score-history-container')
-  newTableRow = main.insertRow(-1)
-  cellData = {
-    a: `<tr><td>${team1.scoreInput.value}</td><td>0</td></tr>`,
-    b: `<tr><td>0</td><td>${team2.scoreInput.value}</td></tr>`
-  };
-
-  t1  => {newTableRow.innerHTML = cellData.a}
-  t2  => {newTableRow.innerHTML = cellData.b}
-  //newTableRow.innerHTML = cellData
-}
 
 function winnerFunc(winningTeam){
   main = document.getElementById('score-history-container')
