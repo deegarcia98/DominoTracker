@@ -191,7 +191,7 @@ function resetGame(team) {
   main = document.getElementById('score-history-container')
   team.nameDiv.innerHTML = ""
   team.scoreDiv.innerHTML = 0
-  (main.innerHTML).remove()
+  main.innerHTML = ''
   team.scoreHistory = []
 }
 
