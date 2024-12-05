@@ -191,6 +191,7 @@ function resetGame(team) {
   main = document.getElementById('score-history-container')
   team.nameDiv.innerHTML = ""
   team.scoreDiv.innerHTML = 0
+  team.currentScore = 0
   main.innerHTML = ''
   team.scoreHistory = []
 }
@@ -202,11 +203,19 @@ function winnerFunc(winningTeam){
   let validScore = validateScore(winningTeam.scoreInput.value)
   if(winningTeam == team1) 
     {
-      cellData =  `<tr><td>${validScore}</td><td>0</td></tr>`
+      cellData =  `<tr>
+      <td class='roundScoreFont'>${validScore}</td>
+      <td class='roundScoreFont'>0</td>
+      <td class="edit-score-btn">Edit</td>
+      </tr>`
     }
   if(winningTeam == team2) 
     {
-      cellData = `<tr><td>0</td><td>${validScore}</td></tr>`
+      cellData =  `<tr>
+      <td class='roundScoreFont'>0</td>
+      <td class='roundScoreFont'>${validScore}</td>
+      <td class="edit-score-btn">Edit</td>
+      </tr>`
     }
   newTableRow.innerHTML = cellData
 }
