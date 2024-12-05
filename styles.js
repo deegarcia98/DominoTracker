@@ -67,9 +67,10 @@ function addName(team) {
 
 function clearTeamName(team) {
   team.nameInput.value = ""
-  team.nameInput.disabled = true
-  //team.nameInput.value = ""
+  // you could use (team.nameInput.disabled = true) inside the clearTeamName func only if
+  // you create an edit button for the team names or game is reset. Do in future
 }
+
 
 // Saving team names and score when enter is pressed
 team1.nameInput.addEventListener("keyup", (e) => {
@@ -187,8 +188,10 @@ resetButton.addEventListener("click", () => {
 });
 
 function resetGame(team) {
+  main = document.getElementById('score-history-container')
   team.nameDiv.innerHTML = ""
   team.scoreDiv.innerHTML = 0
+  (main.innerHTML).remove()
   team.scoreHistory = []
 }
 
@@ -197,12 +200,14 @@ function winnerFunc(winningTeam){
   main = document.getElementById('score-history-container')
   newTableRow = main.insertRow(-1)
   let validScore = validateScore(winningTeam.scoreInput.value)
-  if(winningTeam == team1) {
-   cellData =  `<tr><td>${validScore}</td><td>0</td></tr>`
-  }
-  if(winningTeam == team2) {
-    cellData = `<tr><td>0</td><td>${validScore}</td></tr>`
-  }
+  if(winningTeam == team1) 
+    {
+      cellData =  `<tr><td>${validScore}</td><td>0</td></tr>`
+    }
+  if(winningTeam == team2) 
+    {
+      cellData = `<tr><td>0</td><td>${validScore}</td></tr>`
+    }
   newTableRow.innerHTML = cellData
 }
 
