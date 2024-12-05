@@ -67,6 +67,7 @@ function addName(team) {
 
 function clearTeamName(team) {
   team.nameInput.value = ""
+  team.nameInput.disabled = true
   //team.nameInput.value = ""
 }
 
@@ -74,7 +75,6 @@ function clearTeamName(team) {
 team1.nameInput.addEventListener("keyup", (e) => {
   e.preventDefault();
   if (e.key === "Enter") {
-    //console.log("Enter has been pressed");
     team1savebtn.click()
   }
 });
@@ -82,7 +82,6 @@ team1.nameInput.addEventListener("keyup", (e) => {
 team2.nameInput.addEventListener("keyup", (e) => {
   e.preventDefault();
   if (e.key === "Enter") {
-    //console.log("Enter has been pressed");
     team2savebtn.click()
   }
 });
@@ -197,7 +196,7 @@ function resetGame(team) {
 function winnerFunc(winningTeam){
   main = document.getElementById('score-history-container')
   newTableRow = main.insertRow(-1)
-  validScore = validateScore(winningTeam.scoreInput.value)
+  let validScore = validateScore(winningTeam.scoreInput.value)
   if(winningTeam == team1) {
    cellData =  `<tr><td>${validScore}</td><td>0</td></tr>`
   }
