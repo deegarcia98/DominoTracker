@@ -202,7 +202,7 @@ resetButton.addEventListener("click", () => {
 });
 
 function resetGame(team) {
-  main = document.getElementById('score-history-container')
+  main = document.getElementById('score-history-subcontainer')
   team.nameDiv.innerHTML = ""
   team.scoreDiv.innerHTML = 0
   team.currentScore = 0
@@ -212,7 +212,7 @@ function resetGame(team) {
 
 
 function winnerFunc(winningTeam){
-  main = document.getElementById('score-history-container')
+  main = document.getElementById('score-history-subcontainer')
   newTableRow = main.insertRow(-1)
   let winnerScore = validateScore(winningTeam.scoreInput.value)
   if(winningTeam == team1) 

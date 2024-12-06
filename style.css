@@ -120,6 +120,13 @@ input::-webkit-inner-spin-button {
   margin-right: 10%;
   height: 2em;
 }
+
+#score-history-subcontainer {
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 2em;
+}
+
 .score-history-header {
   text-align: center;
 }
