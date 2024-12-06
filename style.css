@@ -18,8 +18,6 @@ h1 {
 table {
   width: 100%;
   text-align: center;
-  padding-left: 5%;
-  padding-right: 5%;
 }
 
 h2 {
@@ -83,17 +81,15 @@ button:hover {
 }
 
 .team-name {
-  display: inline-block;
+  text-align: center;
   padding-left: 1em;
   font-size: 48px;
   font-weight: bold;
-  width: 80%;
+  
 }
 
 #totalscore-tr {
   text-align: center;
-  display: flex;
-  justify-content: space-around;
 }
 
 .totalscore {
@@ -117,13 +113,9 @@ input::-webkit-inner-spin-button {
   height: 2em;
 }
 
-#score-history-subcontainer {
+.history-container {
   /* display: flex;
-  justify-content: space-between; */
-  
-  margin-left: 10%;
-  margin-right: 10%;
-  height: 2em;
+  justify-content: space-evenly; */
 }
 
 .score-history-header {
@@ -154,13 +146,8 @@ input::-webkit-inner-spin-button {
   font-size: 24px;
 }
 
-.inputs-container {
-  position: relative;
-}
 
-.team-name-container {
-  width: 90%;
-}
+
 
 
  

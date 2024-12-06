@@ -11,62 +11,57 @@
     <header>
       <h1>Cuban Domino's Score Tracker</h1>
     </header>
-
+    
+  <div>
     <table class="inputs-container">
-      <tr>
-        <th>
-          <input
-            id="team1input"
-            class="team-input"
-            placeholder="Enter Team Name"
-          />
-          <button id="team1savebtn" class="team-save-btn">Save</button>
-          <br id="team1-br">
-          <input
-            id="score-input1"
-            class="score-input"
-            placeholder="Score"
-            type="number"
-            min="0"
-            max="150"
-          />
-          <button id="add-score-btn1">Add Score</button>
-        </th>
+    <tr>
+      <th>
+        <input
+        id="team1input"
+        class="team-input"
+        placeholder="Enter Team Name"
+        />
+        <button id="team1savebtn" class="team-save-btn">Save</button>
+        <br id="team1-br">
+        <input
+        id="score-input1"
+        class="score-input"
+        placeholder="Score"
+        type="number"
+        min="0"
+        max="150"
+        />
+        <button id="add-score-btn1">Add Score</button>
+      </th>
+      
+      <th>
+        <input
+        id="team2input"
+        class="team-input"
+        type="text"
+        placeholder="Enter Team Name"
+        />
+        <button id="team2savebtn" class="team-save-btn">Save</button>
+        <br>
+        <input
+        id="score-input2"
+        class="score-input"
+        placeholder="Score"
+        type="number"
+        min="0"
+        max="150"
+        />
+        <button id="add-score-btn2">Add Score</button>
+      </th>
+    </tr>
 
-        <th>
-          <input
-            id="team2input"
-            class="team-input"
-            type="text"
-            placeholder="Enter Team Name"
-          />
-          <button id="team2savebtn" class="team-save-btn">Save</button>
-          <br>
-          <input
-            id="score-input2"
-            class="score-input"
-            placeholder="Score"
-            type="number"
-            min="0"
-            max="150"
-          />
-          <button id="add-score-btn2">Add Score</button>
-        </th>
-      </tr>
-      <tr class="team-name-container">
-        <td>
-          <div>
-            <div id="team1name" class="team-name"></div>
-          </div>
-        </td>
-        <td>
-          <div>
-            <div id="team2name" class="team-name"></div>
-          </div>
-        </td>
-        <!-- <td>Edit</td> -->
-      </tr>
-    </table>
+    <tr class="team-name-container">
+      <td id="team1name" class="team-name"></td>
+      <td id="team2name" class="team-name"></td>
+      <!-- <td>Edit</td> -->
+    </tr>
+  </table>
+</div>
 
     <h2>Team Score</h2>
 
@@ -84,15 +79,15 @@
 
     <!-- id="score-history-container"> -->
 
-    <div>
-      <table id="score-history-container">
+    <div id="score-history-container">
+      <table class="history-container">
         <tr id="tableRow">
           <td id="score-history-team1" class="score-history">Team 1</td>
           <td id="score-history-team2" class="score-history">Team 2</td>
-          <td class="edit-score-btn">Edit?</td>
+          <!-- <td class="edit-score-btn">Edit?</td> -->
         </tr>
+        <table id="score-history-subcontainer" class="history-container"></table>
       </table>
-      <table id="score-history-subcontainer"></table>
     </div>
 
     <!-- Congratulations DIV?? -->
