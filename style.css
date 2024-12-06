@@ -18,8 +18,8 @@ h1 {
 table {
   width: 100%;
   text-align: center;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 h2 {
@@ -90,17 +90,13 @@ button:hover {
   width: 80%;
 }
 
-.score-input {
-  width: 3em;
-}
-
-#scoreboard-tr {
+#totalscore-tr {
   text-align: center;
   display: flex;
   justify-content: space-around;
 }
 
-.score {
+.totalscore {
   font-weight: bold;
   font-family: "Bowlby One", serif;
   font-size: 48px;
@@ -122,6 +118,9 @@ input::-webkit-inner-spin-button {
 }
 
 #score-history-subcontainer {
+  /* display: flex;
+  justify-content: space-between; */
+  
   margin-left: 10%;
   margin-right: 10%;
   height: 2em;
@@ -129,11 +128,6 @@ input::-webkit-inner-spin-button {
 
 .score-history-header {
   text-align: center;
-}
-
-#score-history-data {
-  display: flex;
-  justify-content: space-between;
 }
 
 #reset-game-btn {
@@ -156,8 +150,8 @@ input::-webkit-inner-spin-button {
 }
 
 .roundScoreFont {
-  font-size: 24px;
   font-variant-numeric: slashed-zero;
+  font-size: 24px;
 }
 
 .inputs-container {

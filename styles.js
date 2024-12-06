@@ -217,19 +217,27 @@ function winnerFunc(winningTeam){
   let winnerScore = validateScore(winningTeam.scoreInput.value)
   if(winningTeam == team1) 
     {
-      cellData =  `<tr>
-      <td class='roundScoreFont'>${winnerScore}</td>
-      <td class='roundScoreFont'>0</td>
-      <td class="edit-score-btn">Edit</td>
-      </tr>`
+      cellData =  `
+      <table>
+      <tr>
+      <td class='roundScoreFont score-history-team1'>${winnerScore}</td>
+      <td class='roundScoreFont score-history'>0</td>
+      <td>Edit</td>
+      </tr>
+      </table>
+      `
     }
   if(winningTeam == team2) 
     {
-      cellData =  `<tr>
-      <td class='roundScoreFont'>0</td>
-      <td class='roundScoreFont'>${winnerScore}</td>
-      <td class="edit-score-btn">Edit</td>
-      </tr>`
+      cellData =  `
+      <table>
+      <tr>
+      <td class='roundScoreFont score-history-team1'>0</td>
+      <td class='roundScoreFont score-history-team2'>${winnerScore}</td>
+      <td>Edit</td>
+      </tr>
+      </table>
+      `
     }
   newTableRow.innerHTML = cellData
 }
