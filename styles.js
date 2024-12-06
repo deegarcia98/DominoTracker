@@ -124,16 +124,28 @@ team1.scoreDiv.innerHTML = team1.currentScore
 team2.scoreDiv.innerHTML = team2.currentScore
 
 team1.scoreButton.addEventListener("click", () => {
-  emptyScore(team1)
-  handleGame(team1)
-  clearScoreInput(team1)
+  logicalFuncOrder(team1)
+  // emptyScore(team1)
+  // handleGame(team1)
+  // clearScoreInput(team1)
+
 });
+
+function logicalFuncOrder(team) {
+  if(team.scoreInput.value === '' || team.scoreInput.value === NaN) {
+    return alert('Please provide score')
+  } else {
+    handleGame(team1)
+    clearScoreInput(team1)
+  }
+}
 
 team2.scoreButton.addEventListener("click", () => {
   emptyScore(team2)
   handleGame(team2)
   clearScoreInput(team2)
 });
+console.log(team2.scoreHistory)
 
 // handles the score, innerHTML of total score and if wins congrats message
 function handleGame(team) {
@@ -192,7 +204,7 @@ function resetGame(team) {
   team.nameDiv.innerHTML = ""
   team.scoreDiv.innerHTML = 0
   team.currentScore = 0
-  main.innerHTML = ''
+  main.innerHTML =  ''
   team.scoreHistory = []
 }
 
@@ -200,11 +212,11 @@ function resetGame(team) {
 function winnerFunc(winningTeam){
   main = document.getElementById('score-history-container')
   newTableRow = main.insertRow(-1)
-  let validScore = validateScore(winningTeam.scoreInput.value)
+  let winnerScore = validateScore(winningTeam.scoreInput.value)
   if(winningTeam == team1) 
     {
       cellData =  `<tr>
-      <td class='roundScoreFont'>${validScore}</td>
+      <td class='roundScoreFont'>${winnerScore}</td>
       <td class='roundScoreFont'>0</td>
       <td class="edit-score-btn">Edit</td>
       </tr>`
@@ -213,21 +225,25 @@ function winnerFunc(winningTeam){
     {
       cellData =  `<tr>
       <td class='roundScoreFont'>0</td>
-      <td class='roundScoreFont'>${validScore}</td>
+      <td class='roundScoreFont'>${winnerScore}</td>
       <td class="edit-score-btn">Edit</td>
       </tr>`
     }
   newTableRow.innerHTML = cellData
 }
 
-
+function continueGame() {
+  //this function should show after a team has won to select to reset
+  //or to continue with current teams and keep displaying old history
+}
 
 
 function emptyScore(team) {
-  // this function is to show an alert when the player 
-  //presses the add score button and there is nothing in the input field
+
   if(team.scoreInput.value === '') {
-   return alert('Please provide Score')
+   return true
+  } else {
+    return false
   }
 }
 

@@ -87,6 +87,7 @@ button:hover {
   padding-left: 1em;
   font-size: 48px;
   font-weight: bold;
+  width: 80%;
 }
 
 .score-input {
@@ -151,3 +152,14 @@ input::-webkit-inner-spin-button {
   font-size: 24px;
   font-variant-numeric: slashed-zero;
 }
+
+.inputs-container {
+  position: relative;
+}
+
+.team-name-container {
+  width: 90%;
+}
+
+
+ 
