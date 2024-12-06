@@ -160,7 +160,6 @@ function handleGame(team) {
 }
 
 // Score History
-
 function showHistory(team) {
   for (let i = 0; i < team.scoreHistory.length; i++) {
     team.historyDiv.innerHTML = team.scoreHistory
