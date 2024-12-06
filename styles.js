@@ -132,12 +132,15 @@ team1.scoreButton.addEventListener("click", () => {
 });
 
 function logicalFuncOrder(team) {
-  if(team.scoreInput.value === '' || team.scoreInput.value === NaN) {
+  var x = team.scoreInput.value
+  if(x === '') {
+    team.scoreInput.value = ''
     return alert('Please provide score')
   } else {
     handleGame(team1)
     clearScoreInput(team1)
   }
+  //do not forget in the future to check for isNaN like .1
 }
 
 team2.scoreButton.addEventListener("click", () => {
