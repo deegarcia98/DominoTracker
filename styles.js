@@ -218,24 +218,20 @@ function winnerFunc(winningTeam){
   if(winningTeam == team1) 
     {
       cellData =  `
-      <table class="history-container">
-      <tr>
-      <td class='roundScoreFont'>${winnerScore}</td>
-      <td class='roundScoreFont'>0</td>
+      <tr class='history-container'>
+      <td class='round-score-styling'>${winnerScore}</td>
+      <td class='round-score-styling'>0</td>
       </tr>
-      </table>
       `
       // <td>Edit</td>
     }
   if(winningTeam == team2) 
     {
       cellData =  `
-      <table class="history-container">
-      <tr>
-      <td class='roundScoreFont'>0</td>
-      <td class='roundScoreFont'>${winnerScore}</td>
+      <tr class='history-container'>
+      <td class='round-score-styling'>0</td>
+      <td class='round-score-styling'>${winnerScore}</td>
       </tr>
-      </table>
       `
       // <td>Edit</td> removed but put back in once edit function is created
     }
@@ -257,3 +253,10 @@ function emptyScore(team) {
   }
 }
 
+// cellData =  `
+//       <table class="history-container">
+//       <tr>
+//       <td class='roundScoreFont'>${winnerScore}</td>
+//       <td class='roundScoreFont'>0</td>
+//       </tr>
+//       </table>
