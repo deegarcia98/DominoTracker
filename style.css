@@ -134,6 +134,10 @@ input::-webkit-inner-spin-button {
   max-width: 100%;
 }
 
+#score-input {
+  width: 4em;
+}
+
 #score-input2, #add-score-btn2 {
   margin-top: 1em;
 }
