@@ -1,3 +1,149 @@
+
+/* This is the Mobile media query */
+@media screen and (max-width: 600px) {
+
+
+#modal {
+  max-width: 50%;
+  border: 0; /* removes black border from default modal styling */
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.6); /* puts a small shadow around the modal box */
+  text-align: center;
+}
+  
+#modal::backdrop {
+  background: grey;
+  opacity: 0.5;
+}
+
+  header,
+h1 {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+input {
+  font-family: inherit;
+  border: 0;
+  border-bottom: 2px solid black;
+  outline: 0;
+  font-size: 1em;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  margin-left: 0.5em;
+}
+
+input::placeholder {
+  color: #555555;
+}
+
+input:placeholder-shown {
+  font-size: 1em;
+  cursor: text;
+  top: 20px;
+}
+
+button {
+  border: 2px solid rgb(24, 24, 24);
+  border-radius: 1em;
+  background-color: white;
+  padding: 0.5em 0.5em;
+  margin: 0.25em;
+}
+
+button:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.team-input {
+  font-size: 1em;
+  color: black;
+}
+
+.team-name {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+#totalscore-tr {
+  text-align: center;
+  width: 100%;
+}
+
+.totalscore {
+  font-weight: bold;
+  font-family: "Bowlby One", serif;
+  font-size: 48px;
+  width: 50%;
+}
+
+
+.score-history-header {
+  text-align: center;
+}
+
+.history-container {
+  width: 100%;
+  text-align: center;
+  table-layout: fixed; /* ensures all of the cells remain the same size */
+}
+
+.score-input {
+  width: 40%;
+}
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+.bottom-page-div {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 3em;
+
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+/* This is for anything bigger than 600px, like your chrome browser     */
+
+
+@media screen and (min-width: 600px) {
+  
+
 #modal {
   max-width: 50%;
   border: 0; /* removes black border from default modal styling */
@@ -63,19 +209,18 @@ button:hover {
   color: white;
 }
 
-.rulesofgamebtn {
-  display: block;
-  margin: auto;
-  position: relative;
-  margin-top: 10%;
-}
+/* .rulesofgamebtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+} */
 
 .close-button {
   margin: auto;
 }
 
 .team-input {
-  transition: 0.2s;
   font-size: 1em;
   color: black;
 }
@@ -106,32 +251,23 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-#score-history-container {
-  height: 2em;
-}
-
 
 
 .score-history-header {
   text-align: center;
 }
 
-#reset-game-btn {
-  display: block;
-  margin: auto;
-  position: relative;
-  margin-top: 10%;
-}
+/* #reset-game-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+} */
 
-#footer {
-  position: fixed;
-  bottom: 30px;
-  width: 100%;
-}
 
-#add-score-btn1, #score-input1{
+
+#score-input1, #add-score-btn1 {
   margin-top: 1em;
-  max-width: 100%;
 }
 
 #score-input {
@@ -142,9 +278,7 @@ input::-webkit-inner-spin-button {
   margin-top: 1em;
 }
 
-.team-input {
-  width: 7.5em;
-}
+
 
 .round-score-styling {
   font-variant-numeric: slashed-zero;
@@ -155,10 +289,10 @@ input::-webkit-inner-spin-button {
 .history-container {
   width: 100%;
   text-align: center;
-   table-layout: fixed; /* ensures all of the cells remain the same size */
+  table-layout: fixed; /* ensures all of the cells remain the same size */
 }
 
-
+}
 
 
  
