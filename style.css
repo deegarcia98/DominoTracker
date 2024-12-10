@@ -64,10 +64,10 @@ button {
   margin: 0.25em;
 }
 
-button:hover {
+/* button:hover {
   background-color: #555555;
   color: white;
-}
+} */
 
 .team-input {
   font-size: 1em;
@@ -78,6 +78,7 @@ button:hover {
   text-align: center;
   font-size: 48px;
   font-weight: bold;
+  width: 50%;
 }
 
 #totalscore-tr {
@@ -104,7 +105,15 @@ button:hover {
 }
 
 .score-input {
-  width: 40%;
+  width: 30%;
+}
+
+#score-input1, #add-score-btn1 {
+  margin-top: 1em;
+}
+
+#score-input2, #add-score-btn2 {
+  margin-top: 1em;
 }
 
 
@@ -230,6 +239,7 @@ button:hover {
   padding-left: 1em;
   font-size: 48px;
   font-weight: bold;
+  padding-top: 1em;
 }
 
 #totalscore-tr {
@@ -270,14 +280,13 @@ input::-webkit-inner-spin-button {
   margin-top: 1em;
 }
 
-#score-input {
-  width: 4em;
-}
-
 #score-input2, #add-score-btn2 {
   margin-top: 1em;
 }
 
+#score-input {
+  width: 4em;
+}
 
 
 .round-score-styling {
@@ -290,6 +299,13 @@ input::-webkit-inner-spin-button {
   width: 100%;
   text-align: center;
   table-layout: fixed; /* ensures all of the cells remain the same size */
+}
+
+.bottom-page-div {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 3em;
+
 }
 
 }
