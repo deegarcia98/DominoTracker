@@ -11,17 +11,6 @@ closeModal.addEventListener("click", () => {
   modal.close();
 });
 
-function addElement() {
-  // create a new div element
-  const newDiv = document.createElement("div");
-  // and give it some content
-  const newContent = document.createTextNode("Hi there and greetings");
-  //add the text node to the newly created div
-  newDiv.appendChild(newContent);
-  // add the newly created element and its content into the Dom
-  // const currentDiv = document.getElementById("score-history-team1");
-  // document.insertBefore(newDiv, currentDiv);
-}
 
 // window.localStorage.setItem('firstTeamName', 'secondTeamName');
 
@@ -35,7 +24,17 @@ team1 = {
   currentScore: 0,
   historyDiv: document.getElementById("score-history-team1"),
   scoreHistory: [],
+  gameHiistory: [],
+  replaceHistoryName: document.getElementById("score-history-team1")
 };
+
+ let team1Serialized = JSON.stringify(team1)
+
+localStorage.setItem('team1', team1Serialized)
+
+ let team1Deserialized = JSON.parse(localStorage.getItem("team1"))
+
+ console.log(team1Deserialized.scoreHistory)
 
 team2 = {
   nameInput: document.getElementById("team2input"),
@@ -47,6 +46,8 @@ team2 = {
   currentScore: 0,
   historyDiv: document.getElementById("score-history-team2"),
   scoreHistory: [],
+  gameHiistory: [],
+  replaceHistoryName: document.getElementById("score-history-team2")
 };
 
 //          Code for setting the Team Name
@@ -63,6 +64,7 @@ team2savebtn.addEventListener("click", () => {
 
 function addName(team) {
   team.nameDiv.innerHTML = team.nameInput.value
+  team.replaceHistoryName.innerHTML = `${team.nameInput.value}'s Team`
 }
 
 function clearTeamName(team) {
@@ -166,7 +168,7 @@ function handleGame(team) {
 function showHistory(team) {
   for (let i = 0; i < team.scoreHistory.length; i++) {
     team.historyDiv.innerHTML = team.scoreHistory
-    console.log(team1.scoreHistory[i])
+    // console.log(team1.scoreHistory[i])
   }
 }
 
