@@ -225,10 +225,12 @@ function roundWinnerFunc(winningTeam, loser) {
       cellData =  `
       <tr class='history-container'>
       <td class='round-score-styling'>${winnerScore}</td>
-      <td class='round-score-styling'>${loser}</td>
+      <td class='round-score-styling'>0</td>
       </tr>
       `
+    team2.scoreHistory.push(0)
       // <td>Edit</td>
+      
     }
     if(winningTeam == team2) 
       {
@@ -238,11 +240,10 @@ function roundWinnerFunc(winningTeam, loser) {
         <td class='round-score-styling'>${winnerScore}</td>
         </tr>
         `
+        team1.scoreHistory.push(0)
         // <td>Edit</td> removed but put back in once edit function is created
       }
       newTableRow.innerHTML = cellData
-      console.log(team1.scoreHistory)
-      console.log(team2.scoreHistory)
 }
 
 
@@ -263,7 +264,8 @@ function emptyScore(team) {
 
 function storeData() {}
 
-function losingTeam() {
+function losingTeam(team) {
   // this function should make the team that lost the round receive a 0 in the scoreHistory
-  // how ..... that is a good question
+  // how ..... that is a good question  
+  team.scoreHistory += 0
 }
