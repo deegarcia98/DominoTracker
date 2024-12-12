@@ -216,35 +216,35 @@ function resetGame(team) {
 }
 
 
-function roundWinnerFunc(winningTeam, losingTeam) {
+function roundWinnerFunc(winningTeam, loser) {
   main = document.getElementById('score-history-subcontainer')
   newTableRow = main.insertRow(-1)
   let winnerScore = validateScore(winningTeam.scoreInput.value)
-  let losingTeam = team.scoreInput.value
-  let loserScore = 0
   if(winningTeam == team1) 
     {
       cellData =  `
       <tr class='history-container'>
       <td class='round-score-styling'>${winnerScore}</td>
-      <td class='round-score-styling'>${losingTeam}</td>
+      <td class='round-score-styling'>${loser}</td>
       </tr>
       `
       // <td>Edit</td>
     }
-  if(winningTeam == team2) 
-    {
-      cellData =  `
-      <tr class='history-container'>
-      <td class='round-score-styling'>${losingTeam}</td>
-      <td class='round-score-styling'>${winnerScore}</td>
-      </tr>
-      `
-      // <td>Edit</td> removed but put back in once edit function is created
-    }
-  newTableRow.innerHTML = cellData
-  console.log(team1.scoreHistory)
+    if(winningTeam == team2) 
+      {
+        cellData =  `
+        <tr class='history-container'>
+        <td class='round-score-styling'>0</td>
+        <td class='round-score-styling'>${winnerScore}</td>
+        </tr>
+        `
+        // <td>Edit</td> removed but put back in once edit function is created
+      }
+      newTableRow.innerHTML = cellData
+      console.log(team1.scoreHistory)
+      console.log(team2.scoreHistory)
 }
+
 
 function continueGame() {
   //this function should show after a team has won to select to reset
@@ -262,3 +262,8 @@ function emptyScore(team) {
 }
 
 function storeData() {}
+
+function losingTeam() {
+  // this function should make the team that lost the round receive a 0 in the scoreHistory
+  // how ..... that is a good question
+}
