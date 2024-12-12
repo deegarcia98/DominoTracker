@@ -34,7 +34,7 @@ localStorage.setItem('team1', team1Serialized)
 
  let team1Deserialized = JSON.parse(localStorage.getItem("team1"))
 
- console.log(team1Deserialized.scoreHistory)
+//  console.log(team1Deserialized)
 
 team2 = {
   nameInput: document.getElementById("team2input"),
@@ -150,19 +150,22 @@ team2.scoreButton.addEventListener("click", () => {
   handleGame(team2)
   clearScoreInput(team2)
 });
-console.log(team2.scoreHistory)
+// console.log(team2.scoreHistory)
 
 // handles the score, innerHTML of total score and if wins congrats message
 function handleGame(team) {
   team.currentScore += validateScore(team.scoreInput.value)
   team.scoreDiv.innerHTML = team.currentScore
   storeScore(team);
-  winnerFunc(team)
+  roundWinnerFunc(team)
   let win = hasWon(team.currentScore)
   if (win) {
     winnerAlert(team.nameDiv.innerHTML)
   }
 }
+
+// function to disble the inputs of team and score or use a modal to either start a new game or reset the entire game
+// we can do a modal that shows the congrats msg as well as the 2 options at the bottom of the modal box for newGame or reset
 
 // Score History
 function showHistory(team) {
@@ -213,16 +216,18 @@ function resetGame(team) {
 }
 
 
-function winnerFunc(winningTeam){
+function roundWinnerFunc(winningTeam, losingTeam) {
   main = document.getElementById('score-history-subcontainer')
   newTableRow = main.insertRow(-1)
   let winnerScore = validateScore(winningTeam.scoreInput.value)
+  let losingTeam = team.scoreInput.value
+  let loserScore = 0
   if(winningTeam == team1) 
     {
       cellData =  `
       <tr class='history-container'>
       <td class='round-score-styling'>${winnerScore}</td>
-      <td class='round-score-styling'>0</td>
+      <td class='round-score-styling'>${losingTeam}</td>
       </tr>
       `
       // <td>Edit</td>
@@ -231,13 +236,14 @@ function winnerFunc(winningTeam){
     {
       cellData =  `
       <tr class='history-container'>
-      <td class='round-score-styling'>0</td>
+      <td class='round-score-styling'>${losingTeam}</td>
       <td class='round-score-styling'>${winnerScore}</td>
       </tr>
       `
       // <td>Edit</td> removed but put back in once edit function is created
     }
   newTableRow.innerHTML = cellData
+  console.log(team1.scoreHistory)
 }
 
 function continueGame() {
@@ -255,10 +261,4 @@ function emptyScore(team) {
   }
 }
 
-// cellData =  `
-//       <table class="history-container">
-//       <tr>
-//       <td class='roundScoreFont'>${winnerScore}</td>
-//       <td class='roundScoreFont'>0</td>
-//       </tr>
-//       </table>
+function storeData() {}
