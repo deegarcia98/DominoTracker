@@ -11,9 +11,6 @@ closeModal.addEventListener("click", () => {
   modal.close();
 });
 
-
-// window.localStorage.setItem('firstTeamName', 'secondTeamName');
-
 team1 = {
   nameInput: document.getElementById("team1input"),
   saveBtn: document.getElementById("team1savebtn"),
@@ -25,16 +22,8 @@ team1 = {
   historyDiv: document.getElementById("score-history-team1"),
   scoreHistory: [],
   gameHiistory: [],
-  replaceHistoryName: document.getElementById("score-history-team1")
+  replaceHistoryName: document.getElementById("score-history-team1"),
 };
-
- let team1Serialized = JSON.stringify(team1)
-
-localStorage.setItem('team1', team1Serialized)
-
- let team1Deserialized = JSON.parse(localStorage.getItem("team1"))
-
-//  console.log(team1Deserialized)
 
 team2 = {
   nameInput: document.getElementById("team2input"),
@@ -47,61 +36,66 @@ team2 = {
   historyDiv: document.getElementById("score-history-team2"),
   scoreHistory: [],
   gameHiistory: [],
-  replaceHistoryName: document.getElementById("score-history-team2")
+  replaceHistoryName: document.getElementById("score-history-team2"),
 };
+
+let team1Serialized = JSON.stringify(team1);
+
+localStorage.setItem("team1", team1Serialized);
+
+let team1Deserialized = JSON.parse(localStorage.getItem("team1"));
+
+//  console.log(team1Deserialized)
 
 //          Code for setting the Team Name
 
 team1savebtn.addEventListener("click", () => {
-  addName(team1)
-  clearTeamName(team1)
+  addName(team1);
+  clearTeamName(team1);
 });
 
 team2savebtn.addEventListener("click", () => {
-  addName(team2)
-  clearTeamName(team2)
+  addName(team2);
+  clearTeamName(team2);
 });
 
 function addName(team) {
-  team.nameDiv.innerHTML = team.nameInput.value
-  team.replaceHistoryName.innerHTML = `${team.nameInput.value}'s Team`
+  team.nameDiv.innerHTML = team.nameInput.value;
+  team.replaceHistoryName.innerHTML = `${team.nameInput.value}'s Team`;
 }
 
 function clearTeamName(team) {
-  team.nameInput.value = ""
+  team.nameInput.value = "";
   // you could use (team.nameInput.disabled = true) inside the clearTeamName func only if
   // you create an edit button for the team names or game is reset. Do in future
 }
-
 
 // Saving team names and score when enter is pressed
 team1.nameInput.addEventListener("keyup", (e) => {
   e.preventDefault();
   if (e.key === "Enter") {
-    team1savebtn.click()
+    team1savebtn.click();
   }
 });
 
 team2.nameInput.addEventListener("keyup", (e) => {
   e.preventDefault();
   if (e.key === "Enter") {
-    team2savebtn.click()
+    team2savebtn.click();
   }
 });
 
 team1.scoreInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    e.preventDefault()
-    validateScore()
-    team1.scoreButton.click()
+    e.preventDefault();
+    team1.scoreButton.click();
   }
 });
 
 team2.scoreInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    e.preventDefault()
-    validateScore()
-    team2.scoreButton.click()
+    e.preventDefault();
+    team2.scoreButton.click();
   }
 });
 
@@ -114,7 +108,7 @@ team2.scoreInput.addEventListener("keypress", (e) => {
 // }
 
 function hasWon(score) {
-  return score >= 150
+  return score >= 150;
   // if(score >= 150) {
   //     return true
   // }
@@ -122,150 +116,144 @@ function hasWon(score) {
 }
 
 //          Code for Adding the Score
-team1.scoreDiv.innerHTML = team1.currentScore
-team2.scoreDiv.innerHTML = team2.currentScore
+team1.scoreDiv.innerHTML = team1.currentScore;
+team2.scoreDiv.innerHTML = team2.currentScore;
 
 team1.scoreButton.addEventListener("click", () => {
-  logicalFuncOrder(team1)
+  logicalFuncOrder(team1);
   // emptyScore(team1)
   // handleGame(team1)
   // clearScoreInput(team1)
+});
 
+team2.scoreButton.addEventListener("click", () => {
+  logicalFuncOrder(team2);
+  // emptyScore(team2)
+  // handleGame(team2)
+  // clearScoreInput(team2)
 });
 
 function logicalFuncOrder(team) {
-  var x = team.scoreInput.value
-  if(x === '') {
-    team.scoreInput.value = ''
-    return alert('Please provide score')
-  } else {
-    handleGame(team1)
-    clearScoreInput(team1)
+  var x = team.scoreInput.value;
+  if (x === "") {
+    team.scoreInput.value = "";
+    return alert("Please provide a number.");
   }
+  handleGame(team);
+  clearScoreInput(team);
+
   //do not forget in the future to check for isNaN like .1
 }
 
-team2.scoreButton.addEventListener("click", () => {
-  emptyScore(team2)
-  handleGame(team2)
-  clearScoreInput(team2)
-});
-// console.log(team2.scoreHistory)
+function emptyScore(team) {
+  var x = team.scoreInput.value;
+  if (x === "") {
+    team.scoreInput.value = "";
+    return alert("Please provide a number.");
+  } else {
+    handleGame(team);
+    clearScoreInput(team);
+  }
+}
 
-// handles the score, innerHTML of total score and if wins congrats message
+  //to test if a value X is NaN is an expression of the form X !== X. The result will be true if and only if X is NaN.
+
+
 function handleGame(team) {
-  team.currentScore += validateScore(team.scoreInput.value)
-  team.scoreDiv.innerHTML = team.currentScore
-  storeScore(team);
-  roundWinnerFunc(team)
-  let win = hasWon(team.currentScore)
-  if (win) {
-    winnerAlert(team.nameDiv.innerHTML)
+  if(validateScore(team.scoreInput.value)) {
+
+    team.currentScore += parseInt(team.scoreInput.value);
+  
+    team.scoreDiv.innerHTML = team.currentScore;
+    storeScore(team);
+    roundWinnerFunc(team);
+    let win = hasWon(team.currentScore);
+    if (win) {
+      winnerAlert(team.nameDiv.innerHTML);
+    }
   }
 }
 
 // function to disble the inputs of team and score or use a modal to either start a new game or reset the entire game
 // we can do a modal that shows the congrats msg as well as the 2 options at the bottom of the modal box for newGame or reset
 
-// Score History
-function showHistory(team) {
-  for (let i = 0; i < team.scoreHistory.length; i++) {
-    team.historyDiv.innerHTML = team.scoreHistory
-    // console.log(team1.scoreHistory[i])
-  }
-}
 
 function storeScore(team) {
-  team.scoreHistory.push(validateScore(team.scoreInput.value))
+  team.scoreHistory.push(parseInt(team.scoreInput.value));
 }
 
+
+
 function validateScore(score) {
-  if (!score) {
-    return 0;
+  // if (!score) {
+  //   return 0;
+  // }
+  let scoreInt = parseInt(score);
+  // if (0 < scoreInt < 150) {
+  //   return scoreInt;
+  // }
+  if (isNaN(scoreInt)) {
+    alert("Please provide a number");
+    return false;
   }
-  let scoreInt = parseInt(score)
-  if (0 < scoreInt < 150) {
-    return scoreInt;
-  }
+  return true;
 }
 
 function clearScoreInput(team) {
-  team.scoreInput.value = ""
+  team.scoreInput.value = "";
 }
 
 function winnerAlert(teamname) {
-  alert(`Congratulations ${teamname}, You are the Winner.`)
+  alert(`Congratulations ${teamname}, You are the Winner.`);
 }
 
 function editButton(teamscore) {}
 
-const resetButton = document.getElementById("reset-game-btn")
+// this const must be above the resetBtn event listener if not the console throws an error(cannot access)
+const resetButton = document.getElementById("reset-game-btn");
 
 resetButton.addEventListener("click", () => {
-  resetGame(team1)
-  resetGame(team2)
+  resetGame(team1);
+  resetGame(team2);
 });
 
 function resetGame(team) {
-  main = document.getElementById('score-history-subcontainer')
-  team.nameDiv.innerHTML = ""
-  team.scoreDiv.innerHTML = 0
-  team.currentScore = 0
-  main.innerHTML =  ''
-  team.scoreHistory = []
+  main = document.getElementById("score-history-subcontainer");
+  team.nameDiv.innerHTML = "";
+  team.scoreDiv.innerHTML = 0;
+  team.currentScore = 0;
+  main.innerHTML = "";
+  team.scoreHistory = [];
 }
 
-
 function roundWinnerFunc(winningTeam, loser) {
-  main = document.getElementById('score-history-subcontainer')
-  newTableRow = main.insertRow(-1)
-  let winnerScore = validateScore(winningTeam.scoreInput.value)
-  if(winningTeam == team1) 
-    {
-      cellData =  `
+  main = document.getElementById("score-history-subcontainer");
+  newTableRow = main.insertRow(-1);
+  let winnerScore = winningTeam.scoreInput.value;
+  if (winningTeam == team1) {
+    cellData = `
       <tr class='history-container'>
       <td class='round-score-styling'>${winnerScore}</td>
       <td class='round-score-styling'>0</td>
       </tr>
-      `
-    team2.scoreHistory.push(0)
-      // <td>Edit</td>
-      
-    }
-    if(winningTeam == team2) 
-      {
-        cellData =  `
+      `;
+    team2.scoreHistory.push(0);
+    // <td>Edit</td>
+  }
+  if (winningTeam == team2) {
+    cellData = `
         <tr class='history-container'>
         <td class='round-score-styling'>0</td>
         <td class='round-score-styling'>${winnerScore}</td>
         </tr>
-        `
-        team1.scoreHistory.push(0)
-        // <td>Edit</td> removed but put back in once edit function is created
-      }
-      newTableRow.innerHTML = cellData
+        `;
+    team1.scoreHistory.push(0);
+    // <td>Edit</td> removed but put back in once edit function is created
+  }
+  newTableRow.innerHTML = cellData;
 }
-
 
 function continueGame() {
   //this function should show after a team has won to select to reset
   //or to continue with current teams and keep displaying old history
-}
-
-
-function emptyScore(team) {
-
-  if(team.scoreInput.value === '') {
-   return true
-  } else {
-    return false
-  }
-}
-
-function storeData() {}
-
-function losingTeam(team) {
-  // this function should make the team that lost the round receive a 0 in the scoreHistory
-  // how ..... that is a good question  
-  team.scoreHistory += 0
 }
