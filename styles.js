@@ -257,3 +257,5 @@ function continueGame() {
   //this function should show after a team has won to select to reset
   //or to continue with current teams and keep displaying old history
 }
+
+// this comment fixed my merge request
