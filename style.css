@@ -254,10 +254,10 @@ button:hover {
 
 .team-name {
   text-align: center;
-  padding-left: 1em;
   font-size: 48px;
   font-weight: bold;
   padding-top: 1em;
+  width: 50%;
 }
 
 #totalscore-tr {
