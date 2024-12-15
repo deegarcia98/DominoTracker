@@ -204,7 +204,7 @@ function clearScoreInput(team) {
 }
 
 function winnerAlert(teamname) {
-  alert(`Congratulations ${teamname}, You are the Winner.`);
+  alert(`Congratulations ${teamname}, Your team Won.`);
 }
 
 function editButton(teamscore) {}
