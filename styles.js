@@ -281,6 +281,7 @@ team2.scoreInput.addEventListener("keypress", (e) => {
             resetGame(team2)
             winnerModal.close();
           }) 
+      
 
 
 
@@ -291,6 +292,3 @@ team2.scoreInput.addEventListener("keypress", (e) => {
 
 
 
-
-          
-          
