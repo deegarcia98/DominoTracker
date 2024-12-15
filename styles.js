@@ -233,6 +233,8 @@ team2.scoreInput.addEventListener("keypress", (e) => {
             team.currentScore = 0;
             main.innerHTML = "";
             team.scoreHistory = [];
+            team1.historyDiv.innerHTML = 'Team 1';
+            team2.historyDiv.innerHTML = 'Team 2'; 
           }
           
           function roundWinnerFunc(winningTeam, loser) {
