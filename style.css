@@ -176,6 +176,7 @@ button {
   border: 0; /* removes black border from default modal styling */
   box-shadow: 0 0 1em rgb(0 0 0 / 0.6); /* puts a small shadow around the modal box */
   text-align: center;
+  border-radius: 5px;
 }
 
 #modal::backdrop {
@@ -344,6 +345,40 @@ input::-webkit-inner-spin-button {
   font-size: 18px;
 }
 
+#congratsMsg {
+  font-weight: bold;
+  font-size: large;
+}
+
+#continue-game-btn {
+  width: 50%;
+}
+
+#new-game-btn {
+  width: 50%;
+}
+
+#winner-modal {
+  margin: auto;
+  border-radius: 5px;
+  max-width: 50%;
+  border: 0; /* removes black border from default modal styling */
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.6); /* puts a small shadow around the modal box */
+}
+
+#winner-modal-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+
+
+
+
+
+/* bottom of browers media query */
 }
 
 

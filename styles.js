@@ -211,7 +211,7 @@ team2.scoreInput.addEventListener("keypress", (e) => {
           
           function winnerAlert(teamname) {
             
-            congratsMsg.innerHTML =`Congratulations ${teamname}, Your team Won.`;
+            congratsMsg.innerHTML =`Congratulations ${teamname}, Your team Won!!`;
             
             winnerModal.showModal()
           }
@@ -285,8 +285,7 @@ team2.scoreInput.addEventListener("keypress", (e) => {
           }) 
       
 
-
-
+ 
 
 
 
