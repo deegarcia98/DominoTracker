@@ -16,6 +16,11 @@ closerogModal.addEventListener("click", () => {
   modal.close();
 });
 
+const confirmModal = document.getElementById('confirm-reset-dialog')
+const confirmYesBtn = document.getElementById('confirm-yes-btn')
+const confirmNoBtn = document.getElementById('confirm-no-btn')
+
+
 
 team1 = {
   nameInput: document.getElementById("team1input"),
@@ -211,9 +216,9 @@ team2.scoreInput.addEventListener("keypress", (e) => {
           
           function winnerAlert(teamname) {
             
+            winnerModal.showModal()
             congratsMsg.innerHTML =`Congratulations ${teamname}, Your team Won!!`;
             
-            winnerModal.showModal()
           }
           
           function editButton(teamscore) {}
@@ -222,9 +227,21 @@ team2.scoreInput.addEventListener("keypress", (e) => {
           const resetButton = document.getElementById("reset-game-btn");
           
           resetButton.addEventListener("click", () => {
+            confirmModal.showModal()
+          })
+
+          confirmNoBtn.addEventListener("click", () => {
+            confirmModal.close()
+          })
+
+
+          confirmYesBtn.addEventListener("click", () => {
             resetGame(team1);
             resetGame(team2);
+            confirmModal.close()
           });
+
+
           
           function resetGame(team) {
             main = document.getElementById("score-history-subcontainer");
@@ -264,7 +281,7 @@ team2.scoreInput.addEventListener("keypress", (e) => {
             newTableRow.innerHTML = cellData;
           }
           
-          continueGameBtn.addEventListener('click', (team) => {
+          continueGameBtn.addEventListener('click', () => {
             main = document.getElementById("score-history-subcontainer");
             team1.scoreDiv.innerHTML = 0
             team2.scoreDiv.innerHTML = 0
@@ -272,8 +289,6 @@ team2.scoreInput.addEventListener("keypress", (e) => {
             team2.currentScore = 0
             team1.gameHistory.push(team1.scoreHistory)
             team2.gameHistory.push(team2.scoreHistory)
-            console.log(team1.gameHistory)
-            console.log(team2.gameHistory)
             main.innerHTML = ""
             winnerModal.close();
           })
