@@ -22,7 +22,7 @@ const confirmNoBtn = document.getElementById('confirm-no-btn')
 
 
 
-team1 = {
+ let team1Obj = {
   nameInput: document.getElementById("team1input"),
   saveBtn: document.getElementById("team1savebtn"),
   scoreDiv: document.getElementById("score1"),
@@ -34,9 +34,10 @@ team1 = {
   scoreHistory: [],
   gameHistory: [],
   replaceHistoryName: document.getElementById("score-history-team1"),
+  name: localStorage.getItem("team1Name"),
 };
 
-team2 = {
+ let team2Obj = {
   nameInput: document.getElementById("team2input"),
   saveBtn: document.getElementById("teamsavebtn"),
   scoreDiv: document.getElementById("score2"),
@@ -49,30 +50,30 @@ team2 = {
   gameHistory: [],
   replaceHistoryName: document.getElementById("score-history-team2"),
 };
+team1Obj.nameDiv.innerHTML = team1Obj.name
 
-let team1Serialized = JSON.stringify(team1);
 
-localStorage.setItem("team1", team1Serialized);
 
-let team1Deserialized = JSON.parse(localStorage.getItem("team1"));
 
-//  console.log(team1Deserialized)
 
 //          Code for setting the Team Name
 
 team1savebtn.addEventListener("click", () => {
-  addName(team1);
-  clearTeamName(team1);
+  addName(team1Obj);
+  clearTeamName(team1Obj);
 });
 
 team2savebtn.addEventListener("click", () => {
-  addName(team2);
-  clearTeamName(team2);
+  addName(team2Obj);
+  clearTeamName(team2Obj);
 });
 
 function addName(team) {
-  team.nameDiv.innerHTML = team.nameInput.value;
-  team.replaceHistoryName.innerHTML = `${team.nameInput.value}'s Team`;
+  team1Obj.name = team.nameInput.value
+  localStorage.setItem("team1Name", team.nameInput.value)
+  team.nameDiv.innerHTML = team1Obj.name;
+  // team.nameDiv.innerHTML = localStorage.getItem(team1ObjDeserialized.nameDiv)
+  team.replaceHistoryName.innerHTML = `${team1Obj.name}'s Team`;
 }
 
 function clearTeamName(team) {
@@ -82,41 +83,34 @@ function clearTeamName(team) {
 }
 
 // Saving team names and score when enter is pressed
-team1.nameInput.addEventListener("keyup", (e) => {
+team1Obj.nameInput.addEventListener("keyup", (e) => {
   e.preventDefault();
   if (e.key === "Enter") {
     team1savebtn.click();
   }
 });
 
-team2.nameInput.addEventListener("keyup", (e) => {
+team2Obj.nameInput.addEventListener("keyup", (e) => {
   e.preventDefault();
   if (e.key === "Enter") {
     team2savebtn.click();
   }
 });
 
-team1.scoreInput.addEventListener("keypress", (e) => {
+team1Obj.scoreInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
-    team1.scoreButton.click();
+    team1Obj.scoreButton.click();
   }
 });
 
-team2.scoreInput.addEventListener("keypress", (e) => {
+team2Obj.scoreInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
-    team2.scoreButton.click();
+    team2Obj.scoreButton.click();
   }
 });
 
-// function validateNameInput(team) {
-  //   var x = team.nameInput;
-  //   if (x === "") {
-    //     alert("Name must be filled out");
-    //     return false;
-    //   }
-    // }
     
     function hasWon(score) {
       return score >= 150;
@@ -127,18 +121,18 @@ team2.scoreInput.addEventListener("keypress", (e) => {
       }
       
       //          Code for Adding the Score
-      team1.scoreDiv.innerHTML = team1.currentScore;
-      team2.scoreDiv.innerHTML = team2.currentScore;
+      team1Obj.scoreDiv.innerHTML = team1Obj.currentScore;
+      team2Obj.scoreDiv.innerHTML = team2Obj.currentScore;
       
-      team1.scoreButton.addEventListener("click", () => {
-        logicalFuncOrder(team1);
+      team1Obj.scoreButton.addEventListener("click", () => {
+        logicalFuncOrder(team1Obj);
         // emptyScore(team1)
         // handleGame(team1)
         // clearScoreInput(team1)
       });
       
-      team2.scoreButton.addEventListener("click", () => {
-        logicalFuncOrder(team2);
+      team2Obj.scoreButton.addEventListener("click", () => {
+        logicalFuncOrder(team2Obj);
         // emptyScore(team2)
         // handleGame(team2)
         // clearScoreInput(team2)
@@ -181,6 +175,8 @@ team2.scoreInput.addEventListener("keypress", (e) => {
           let win = hasWon(team.currentScore);
           if (win) {
             winnerAlert(team.nameDiv.innerHTML);
+            console.log(team1Deserialized)
+            console.log("team 2", team2Obj.gameHistory)
           }
         }
       }
@@ -215,9 +211,14 @@ team2.scoreInput.addEventListener("keypress", (e) => {
           }
           
           function winnerAlert(teamname) {
+            team1Obj.gameHistory.push(team1Obj.scoreHistory)
+            team2Obj.gameHistory.push(team2Obj.scoreHistory)
+            localStorage.setItem(team1Obj.gameHistory)
+            console.log( localStorage.getItem('team1Parsed') )
             
             winnerModal.showModal()
             congratsMsg.innerHTML =`Congratulations ${teamname}, Your team Won!!`;
+            
             
           }
           
@@ -236,8 +237,8 @@ team2.scoreInput.addEventListener("keypress", (e) => {
 
 
           confirmYesBtn.addEventListener("click", () => {
-            resetGame(team1);
-            resetGame(team2);
+            resetGame(team1Obj);
+            resetGame(team2Obj);
             confirmModal.close()
           });
 
@@ -250,32 +251,32 @@ team2.scoreInput.addEventListener("keypress", (e) => {
             team.currentScore = 0;
             main.innerHTML = "";
             team.scoreHistory = [];
-            team1.historyDiv.innerHTML = 'Team 1';
-            team2.historyDiv.innerHTML = 'Team 2'; 
+            team1Obj.historyDiv.innerHTML = 'Team 1';
+            team2Obj.historyDiv.innerHTML = 'Team 2'; 
           }
           
-          function roundWinnerFunc(winningTeam, loser) {
+          function roundWinnerFunc(winningTeam) {
             main = document.getElementById("score-history-subcontainer");
             newTableRow = main.insertRow(-1);
             let winnerScore = winningTeam.scoreInput.value;
-            if (winningTeam == team1) {
+            if (winningTeam == team1Obj) {
               cellData = `
               <tr class='history-container'>
               <td class='round-score-styling'>${winnerScore}</td>
               <td class='round-score-styling'>0</td>
               </tr>
               `;
-              team2.scoreHistory.push(0);
+              team2Obj.scoreHistory.push(0);
               // <td>Edit</td>
             }
-            if (winningTeam == team2) {
+            if (winningTeam == team2Obj) {
               cellData = `
               <tr class='history-container'>
               <td class='round-score-styling'>0</td>
               <td class='round-score-styling'>${winnerScore}</td>
               </tr>
               `;
-              team1.scoreHistory.push(0);
+              team1Obj.scoreHistory.push(0);
               // <td>Edit</td> removed but put back in once edit function is created
             }
             newTableRow.innerHTML = cellData;
@@ -283,19 +284,20 @@ team2.scoreInput.addEventListener("keypress", (e) => {
           
           continueGameBtn.addEventListener('click', () => {
             main = document.getElementById("score-history-subcontainer");
-            team1.scoreDiv.innerHTML = 0
-            team2.scoreDiv.innerHTML = 0
-            team1.currentScore = 0
-            team2.currentScore = 0
-            team1.gameHistory.push(team1.scoreHistory)
-            team2.gameHistory.push(team2.scoreHistory)
+            team1Obj.scoreDiv.innerHTML = 0
+            team2Obj.scoreDiv.innerHTML = 0
+            team1Obj.currentScore = 0
+            team2Obj.currentScore = 0
+            // maybe instead of pushing this information once continue is pressed continue should print the game history
+            // team1.gameHistory.push(team1.scoreHistory)
+            // team2.gameHistory.push(team2.scoreHistory)
             main.innerHTML = ""
             winnerModal.close();
           })
 
           newGameBtn.addEventListener('click', () => {
-            resetGame(team1);
-            resetGame(team2)
+            resetGame(team1Obj);
+            resetGame(team2Obj)
             winnerModal.close();
           }) 
       
