@@ -134,6 +134,27 @@ button {
   font-size: 18px;
 }
 
+#confirm-reset-dialog {
+  margin: auto;
+  border-radius: 5px;
+  max-width: 50%;
+  border: 0; /* removes black border from default modal styling */
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.6); /* puts a small shadow around the modal box */
+}
+
+#confirm-yes-btn {
+  width: 50%;
+}
+
+#confirm-no-btn {
+  width: 50%;
+}
+
+#confirm-reset-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 
   
 

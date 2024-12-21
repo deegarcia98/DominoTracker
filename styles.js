@@ -31,10 +31,11 @@ const confirmNoBtn = document.getElementById('confirm-no-btn')
   scoreButton: document.getElementById("add-score-btn1"),
   currentScore: 0,
   historyDiv: document.getElementById("score-history-team1"),
+  replaceHistoryName: document.getElementById("score-history-team1"),
   scoreHistory: [],
   gameHistory: [],
-  replaceHistoryName: document.getElementById("score-history-team1"),
   name: localStorage.getItem("team1Name"),
+  // name: localStorage.getItem("team1Name"),
 };
 
  let team2Obj = {
@@ -46,34 +47,45 @@ const confirmNoBtn = document.getElementById('confirm-no-btn')
   scoreButton: document.getElementById("add-score-btn2"),
   currentScore: 0,
   historyDiv: document.getElementById("score-history-team2"),
+  replaceHistoryName: document.getElementById("score-history-team2"),
   scoreHistory: [],
   gameHistory: [],
-  replaceHistoryName: document.getElementById("score-history-team2"),
+  name: localStorage.getItem("team2Name")
 };
 team1Obj.nameDiv.innerHTML = team1Obj.name
+team2Obj.nameDiv.innerHTML = team2Obj.name
 
-
+function referenceLocalStorage(){
+  team1Obj.name = team.nameInput.value
+  localStorage.setItem("team1Name", team.nameInput.value)
+  team.nameDiv.innerHTML = team1Obj.name
+  // team.nameDiv.innerHTML = localStorage.getItem(team1ObjDeserialized.nameDiv)
+  team.replaceHistoryName.innerHTML = `${team1Obj.name}'s Team`
+}
 
 
 
 //          Code for setting the Team Name
 
 team1savebtn.addEventListener("click", () => {
-  addName(team1Obj);
+  localStorage.setItem("team1Name", team1Obj.nameInput.value)
+  addName(team1Obj)
   clearTeamName(team1Obj);
 });
 
 team2savebtn.addEventListener("click", () => {
+  localStorage.setItem("team2Name", team2Obj.nameInput.value)
+  // team2Obj.nameDiv.innerHTML = team2Obj.name
+  // team2Obj.replaceHistoryName.innerHTML = `${team2Obj.name}'s Team`
   addName(team2Obj);
   clearTeamName(team2Obj);
 });
 
 function addName(team) {
-  team1Obj.name = team.nameInput.value
-  localStorage.setItem("team1Name", team.nameInput.value)
-  team.nameDiv.innerHTML = team1Obj.name;
-  // team.nameDiv.innerHTML = localStorage.getItem(team1ObjDeserialized.nameDiv)
-  team.replaceHistoryName.innerHTML = `${team1Obj.name}'s Team`;
+  team.nameDiv.innerHTML = team.name
+  team.replaceHistoryName.innerHTML = `${team.name}'s Team`
+  // team.nameDiv.innerHTML = team.name;
+  // team.replaceHistoryName.innerHTML = `${localStorage.getItem(teamname.name)}'s Team`;
 }
 
 function clearTeamName(team) {
