@@ -55,6 +55,10 @@ const confirmNoBtn = document.getElementById('confirm-no-btn')
 team1Obj.nameDiv.innerHTML = team1Obj.name
 team2Obj.nameDiv.innerHTML = team2Obj.name
 
+team1Obj.replaceHistoryName.innerHTML = `${team1Obj.name}'s Team`
+team2Obj.replaceHistoryName.innerHTML = `${team2Obj.name}'s Team`
+
+
 function referenceLocalStorage(){
   team1Obj.name = team.nameInput.value
   localStorage.setItem("team1Name", team.nameInput.value)
