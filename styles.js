@@ -82,6 +82,7 @@ team2savebtn.addEventListener("click", () => {
 });
 
 function addName(team) {
+  team.name = team.nameInput.value
   team.nameDiv.innerHTML = team.name
   team.replaceHistoryName.innerHTML = `${team.name}'s Team`
   // team.nameDiv.innerHTML = team.name;
